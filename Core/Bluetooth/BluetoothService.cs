@@ -1,342 +1,199 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Core.Logging;
 
 namespace Core.Bluetooth;
 
-/// <summary>
-/// Bluetooth service providing high-level control of Bluetooth subsystem.
-/// 
-/// This service manages:
-/// - Persistent bluetoothctl session (BluetoothTerminal)
-/// - Device cache and state management (BluetoothSessionManager)
-/// - Discovery flow and device operations
-/// 
-/// Reference: PRD Sections 3.4, 10 (Stateful Tool Awareness, Bluetooth Requirements)
-/// </summary>
-public class BluetoothService : IDisposable
+public sealed class BluetoothService : IAsyncDisposable, IDisposable
 {
-    private static BluetoothService? _instance;
-    private static readonly object _instanceLock = new();
-
-    private readonly BluetoothTerminal _terminal;
-    private readonly BluetoothSessionManager _sessionManager;
-    private bool _disposed = false;
-
-    public static BluetoothService Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                lock (_instanceLock)
-                {
-                    _instance ??= new BluetoothService();
-                }
-            }
-            return _instance;
-        }
-    }
+    private readonly BluetoothTerminal _terminal = new();
+    private readonly BluetoothSessionManager _session = new();
+    private bool _initialized;
+    private bool _disposed;
 
     public bool IsActive => _terminal.IsActive;
+    public List<BluetoothDevice> CachedDevices => _session.Snapshot();
 
-    public IReadOnlyList<BluetoothDevice> CachedDevices
-        => _sessionManager.CachedDevices;
-
-    private BluetoothService()
+    public async Task InitializeAsync(CancellationToken cancellationToken = default)
     {
-        _terminal = new BluetoothTerminal();
-        _sessionManager = new BluetoothSessionManager();
-    }
+        if (_initialized)
+            return;
 
-    /// <summary>
-    /// Initialize the Bluetooth subsystem with required settings.
-    /// 
-    /// Startup commands per PRD Section 10:
-    /// - power on
-    /// - agent on
-    /// - default-agent
-    /// - discoverable on
-    /// - pairable on
-    /// </summary>
-    public async Task InitializeAsync()
-    {
         try
         {
-            Logger.Info("Initializing Bluetooth subsystem", "BluetoothService");
-
-            _terminal.Initialize();
-
-            // Execute initialization sequence
-            await _terminal.SendCommandAsync(BluetoothCommands.Power(true));
-            await _terminal.SendCommandAsync(BluetoothCommands.Agent(true));
-            await _terminal.SendCommandAsync(BluetoothCommands.DefaultAgent());
-            await _terminal.SendCommandAsync(BluetoothCommands.Discoverable(true));
-            await _terminal.SendCommandAsync(BluetoothCommands.Pairable(true));
-
-            Logger.Info("Bluetooth subsystem initialized successfully", "BluetoothService");
+            _terminal.Start();
+            Logger.Info("Initializing adapter state", "Bluetooth");
+            await _terminal.SendCommand(BluetoothCommands.Power(true), TimeSpan.FromSeconds(6), cancellationToken).ConfigureAwait(false);
+            await _terminal.SendCommand(BluetoothCommands.Agent(true), TimeSpan.FromSeconds(6), cancellationToken).ConfigureAwait(false);
+            await _terminal.SendCommand(BluetoothCommands.DefaultAgent(), TimeSpan.FromSeconds(6), cancellationToken).ConfigureAwait(false);
+            await _terminal.SendCommand(BluetoothCommands.Discoverable(true), TimeSpan.FromSeconds(6), cancellationToken).ConfigureAwait(false);
+            await _terminal.SendCommand(BluetoothCommands.Pairable(true), TimeSpan.FromSeconds(6), cancellationToken).ConfigureAwait(false);
+            _initialized = true;
+            Logger.Info("Bluetooth adapter initialization complete", "Bluetooth");
         }
         catch (Exception ex)
         {
-            Logger.Error($"Bluetooth initialization failed: {ex.Message}", "BluetoothService");
+            Logger.Error($"Bluetooth initialization failed: {ex.Message}", "Bluetooth");
             throw;
         }
     }
 
-    /// <summary>
-    /// Get all discovered and paired devices with current state.
-    /// 
-    /// Uses intelligent caching to avoid unnecessary rescans.
-    /// </summary>
-    public async Task<List<BluetoothDevice>> GetDevicesAsync()
+    public async Task<List<BluetoothDevice>> ScanDevicesAsync(TimeSpan? duration = null, CancellationToken cancellationToken = default)
     {
-        if (!IsActive)
-            throw new InvalidOperationException("Bluetooth service is not active");
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        var scanDuration = duration ?? TimeSpan.FromSeconds(8);
+        _session.SetScanning(true);
 
         try
         {
-            // Return cached devices if valid
-            if (_sessionManager.ScanCacheValid && _sessionManager.CachedDevices.Count > 0)
+            Logger.Info($"Starting scan for {scanDuration.TotalSeconds:0}s", "Bluetooth");
+            await _terminal.SendCommand(BluetoothCommands.Scan(true), TimeSpan.FromSeconds(4), cancellationToken).ConfigureAwait(false);
+            await Task.Delay(scanDuration, cancellationToken).ConfigureAwait(false);
+            var devicesOutput = await _terminal.SendCommand(BluetoothCommands.Devices(), TimeSpan.FromSeconds(8), cancellationToken).ConfigureAwait(false);
+            await _terminal.SendCommand(BluetoothCommands.Scan(false), TimeSpan.FromSeconds(4), cancellationToken).ConfigureAwait(false);
+
+            var discovered = BluetoothParser.ParseDevices(devicesOutput);
+            _session.Merge(discovered);
+            await RefreshDeviceStatesAsync(cancellationToken).ConfigureAwait(false);
+            Logger.Info($"Scan completed with {_session.Snapshot().Count} cached devices", "Bluetooth");
+            return _session.Snapshot();
+        }
+        catch (Exception ex)
+        {
+            Logger.Error($"Bluetooth scan failed: {ex.Message}", "Bluetooth");
+            try
             {
-                Logger.Debug("Returning cached device list", "BluetoothService");
-                return new List<BluetoothDevice>(_sessionManager.CachedDevices);
+                await _terminal.SendCommand(BluetoothCommands.Scan(false), TimeSpan.FromSeconds(2), CancellationToken.None).ConfigureAwait(false);
             }
-
-            Logger.Debug("Fetching device list from terminal", "BluetoothService");
-
-            var allDevicesOutput = await _terminal.SendCommandAsync(BluetoothCommands.Devices());
-            var pairedOutput = await _terminal.SendCommandAsync(BluetoothCommands.DevicesFilter("Paired"));
-            var connectedOutput = await _terminal.SendCommandAsync(BluetoothCommands.DevicesFilter("Connected"));
-            var trustedOutput = await _terminal.SendCommandAsync(BluetoothCommands.DevicesFilter("Trusted"));
-
-            var allDevices = BluetoothParser.ParseDevices(allDevicesOutput);
-            var pairedDevices = BluetoothParser.ParseDevices(pairedOutput);
-            var connectedDevices = BluetoothParser.ParseDevices(connectedOutput);
-            var trustedDevices = BluetoothParser.ParseDevices(trustedOutput);
-
-            var enrichedDevices = BluetoothParser.EnrichDeviceStates(
-                allDevices,
-                pairedDevices,
-                connectedDevices,
-                trustedDevices
-            );
-
-            _sessionManager.UpdateDeviceCache(enrichedDevices);
-
-            return enrichedDevices;
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"Failed to get devices: {ex.Message}", "BluetoothService");
+            catch (Exception stopEx)
+            {
+                Logger.Warning($"Unable to stop scan after failure: {stopEx.Message}", "Bluetooth");
+            }
             throw;
+        }
+        finally
+        {
+            _session.SetScanning(false);
         }
     }
 
-    /// <summary>
-    /// Start Bluetooth device discovery scan.
-    /// 
-    /// Per PRD Section 10:
-    /// - scan on
-    /// - wait for asynchronous discovery
-    /// - retrieve devices
-    /// - scan off
-    /// </summary>
-    public async Task<List<BluetoothDevice>> ScanAsync(TimeSpan? duration = null)
+    public async Task<List<BluetoothDevice>> ListDevicesAsync(bool forceRefresh = false, CancellationToken cancellationToken = default)
     {
-        if (!IsActive)
-            throw new InvalidOperationException("Bluetooth service is not active");
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        if (!forceRefresh && _session.CacheIsFresh && _session.Snapshot().Count > 0)
+            return _session.Snapshot();
 
-        var scanDuration = duration ?? TimeSpan.FromSeconds(10);
-
-        try
-        {
-            Logger.Info($"Starting Bluetooth scan for {scanDuration.TotalSeconds}s", "BluetoothService");
-
-            _sessionManager.SetScanningState(true);
-
-            // Start scan
-            await _terminal.SendCommandAsync(BluetoothCommands.ScanOn());
-
-            // Wait for discovery
-            await Task.Delay(scanDuration);
-
-            // Stop scan
-            await _terminal.SendCommandAsync(BluetoothCommands.ScanOff());
-
-            // Fetch discovered devices
-            var devices = await GetDevicesAsync();
-
-            _sessionManager.SetScanningState(false);
-
-            Logger.Info($"Scan completed: {devices.Count} devices discovered", "BluetoothService");
-
-            return devices;
-        }
-        catch (Exception ex)
-        {
-            _sessionManager.SetScanningState(false);
-            Logger.Error($"Scan failed: {ex.Message}", "BluetoothService");
-            throw;
-        }
+        var output = await _terminal.SendCommand(BluetoothCommands.Devices(), TimeSpan.FromSeconds(8), cancellationToken).ConfigureAwait(false);
+        _session.Merge(BluetoothParser.ParseDevices(output));
+        await RefreshDeviceStatesAsync(cancellationToken).ConfigureAwait(false);
+        return _session.Snapshot();
     }
 
-    /// <summary>
-    /// Pair with a Bluetooth device.
-    /// </summary>
-    public async Task PairAsync(BluetoothDevice device)
+    public async Task<List<BluetoothDevice>> ListPairedDevicesAsync(CancellationToken cancellationToken = default)
     {
-        if (!IsActive)
-            throw new InvalidOperationException("Bluetooth service is not active");
-
-        try
-        {
-            Logger.Info($"Pairing with {device.Name} ({device.Mac})", "BluetoothService");
-
-            await _terminal.SendCommandAsync(BluetoothCommands.Pair(device.Mac));
-            await _terminal.SendCommandAsync(BluetoothCommands.Trust(device.Mac));
-            await _terminal.SendCommandAsync(BluetoothCommands.Connect(device.Mac));
-
-            _sessionManager.UpdateDeviceState(device.Mac, connected: true, paired: true, trusted: true);
-
-            Logger.Info($"Successfully paired with {device.Name}", "BluetoothService");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"Pairing failed: {ex.Message}", "BluetoothService");
-            throw;
-        }
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        var devices = BluetoothParser.ParseDevices(await _terminal.SendCommand(BluetoothCommands.PairedDevices(), TimeSpan.FromSeconds(8), cancellationToken).ConfigureAwait(false));
+        BluetoothParser.MarkState(devices, paired: true);
+        _session.Merge(devices);
+        return devices;
     }
 
-    /// <summary>
-    /// Connect to a paired Bluetooth device.
-    /// </summary>
-    public async Task ConnectAsync(BluetoothDevice device)
+    public async Task<List<BluetoothDevice>> ListTrustedDevicesAsync(CancellationToken cancellationToken = default)
     {
-        if (!IsActive)
-            throw new InvalidOperationException("Bluetooth service is not active");
-
-        try
-        {
-            Logger.Info($"Connecting to {device.Name} ({device.Mac})", "BluetoothService");
-
-            await _terminal.SendCommandAsync(BluetoothCommands.Connect(device.Mac));
-
-            _sessionManager.UpdateDeviceState(device.Mac, connected: true);
-
-            Logger.Info($"Successfully connected to {device.Name}", "BluetoothService");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"Connection failed: {ex.Message}", "BluetoothService");
-            throw;
-        }
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        var devices = BluetoothParser.ParseDevices(await _terminal.SendCommand(BluetoothCommands.TrustedDevices(), TimeSpan.FromSeconds(8), cancellationToken).ConfigureAwait(false));
+        BluetoothParser.MarkState(devices, trusted: true);
+        _session.Merge(devices);
+        return devices;
     }
 
-    /// <summary>
-    /// Disconnect from a Bluetooth device.
-    /// </summary>
-    public async Task DisconnectAsync(BluetoothDevice device)
+    public async Task<List<BluetoothDevice>> ListConnectedDevicesAsync(CancellationToken cancellationToken = default)
     {
-        if (!IsActive)
-            throw new InvalidOperationException("Bluetooth service is not active");
-
-        try
-        {
-            Logger.Info($"Disconnecting from {device.Name} ({device.Mac})", "BluetoothService");
-
-            await _terminal.SendCommandAsync(BluetoothCommands.Disconnect(device.Mac));
-
-            _sessionManager.UpdateDeviceState(device.Mac, connected: false);
-
-            Logger.Info($"Successfully disconnected from {device.Name}", "BluetoothService");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"Disconnection failed: {ex.Message}", "BluetoothService");
-            throw;
-        }
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        var devices = BluetoothParser.ParseDevices(await _terminal.SendCommand(BluetoothCommands.ConnectedDevices(), TimeSpan.FromSeconds(8), cancellationToken).ConfigureAwait(false));
+        BluetoothParser.MarkState(devices, connected: true);
+        _session.Merge(devices);
+        return devices;
     }
 
-    /// <summary>
-    /// Remove a paired device.
-    /// </summary>
-    public async Task RemoveAsync(BluetoothDevice device)
+    public async Task<string> PairDeviceAsync(BluetoothDevice device, CancellationToken cancellationToken = default)
     {
-        if (!IsActive)
-            throw new InvalidOperationException("Bluetooth service is not active");
-
-        try
-        {
-            Logger.Info($"Removing {device.Name} ({device.Mac})", "BluetoothService");
-
-            await _terminal.SendCommandAsync(BluetoothCommands.Remove(device.Mac));
-
-            Logger.Info($"Successfully removed {device.Name}", "BluetoothService");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"Remove failed: {ex.Message}", "BluetoothService");
-            throw;
-        }
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        Logger.Info($"Pairing {device.DisplayName} ({device.Mac})", "Bluetooth");
+        var response = await _terminal.SendCommand(BluetoothCommands.Pair(device.Mac), TimeSpan.FromSeconds(30), cancellationToken).ConfigureAwait(false);
+        _session.UpdateState(device.Mac, paired: true);
+        return BluetoothParser.CleanResponse(response);
     }
 
-    /// <summary>
-    /// Get detailed information about a device.
-    /// </summary>
-    public async Task<string> GetInfoAsync(BluetoothDevice device)
+    public async Task<string> TrustDeviceAsync(BluetoothDevice device, CancellationToken cancellationToken = default)
     {
-        if (!IsActive)
-            throw new InvalidOperationException("Bluetooth service is not active");
-
-        try
-        {
-            Logger.Debug($"Fetching info for {device.Name} ({device.Mac})", "BluetoothService");
-
-            var output = await _terminal.SendCommandAsync(BluetoothCommands.Info(device.Mac));
-            return BluetoothParser.ParseCommandResponse(output);
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"Failed to get info: {ex.Message}", "BluetoothService");
-            throw;
-        }
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        Logger.Info($"Trusting {device.DisplayName} ({device.Mac})", "Bluetooth");
+        var response = await _terminal.SendCommand(BluetoothCommands.Trust(device.Mac), TimeSpan.FromSeconds(10), cancellationToken).ConfigureAwait(false);
+        _session.UpdateState(device.Mac, trusted: true);
+        return BluetoothParser.CleanResponse(response);
     }
+
+    public async Task<string> ConnectDeviceAsync(BluetoothDevice device, CancellationToken cancellationToken = default)
+    {
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        Logger.Info($"Connecting {device.DisplayName} ({device.Mac})", "Bluetooth");
+        var response = await _terminal.SendCommand(BluetoothCommands.Connect(device.Mac), TimeSpan.FromSeconds(20), cancellationToken).ConfigureAwait(false);
+        _session.UpdateState(device.Mac, connected: true);
+        return BluetoothParser.CleanResponse(response);
+    }
+
+    public async Task<string> DisconnectDeviceAsync(BluetoothDevice device, CancellationToken cancellationToken = default)
+    {
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        Logger.Info($"Disconnecting {device.DisplayName} ({device.Mac})", "Bluetooth");
+        var response = await _terminal.SendCommand(BluetoothCommands.Disconnect(device.Mac), TimeSpan.FromSeconds(12), cancellationToken).ConfigureAwait(false);
+        _session.UpdateState(device.Mac, connected: false);
+        return BluetoothParser.CleanResponse(response);
+    }
+
+    public async Task<string> RemoveDeviceAsync(BluetoothDevice device, CancellationToken cancellationToken = default)
+    {
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        Logger.Info($"Removing {device.DisplayName} ({device.Mac})", "Bluetooth");
+        var response = await _terminal.SendCommand(BluetoothCommands.Remove(device.Mac), TimeSpan.FromSeconds(12), cancellationToken).ConfigureAwait(false);
+        _session.Remove(device.Mac);
+        return BluetoothParser.CleanResponse(response);
+    }
+
+    public async Task<string> GetDeviceInfoAsync(BluetoothDevice device, CancellationToken cancellationToken = default)
+    {
+        await EnsureInitializedAsync(cancellationToken).ConfigureAwait(false);
+        var response = await _terminal.SendCommand(BluetoothCommands.Info(device.Mac), TimeSpan.FromSeconds(8), cancellationToken).ConfigureAwait(false);
+        var enriched = BluetoothParser.EnrichFromInfo(device, response);
+        _session.Merge(new[] { enriched }, refreshTimestamp: false);
+        return BluetoothParser.CleanResponse(response);
+    }
+
+    private async Task RefreshDeviceStatesAsync(CancellationToken cancellationToken)
+    {
+        var paired = await ListPairedDevicesAsync(cancellationToken).ConfigureAwait(false);
+        var trusted = await ListTrustedDevicesAsync(cancellationToken).ConfigureAwait(false);
+        var connected = await ListConnectedDevicesAsync(cancellationToken).ConfigureAwait(false);
+        _session.Merge(BluetoothParser.MergeDevices(paired, trusted, connected));
+        _session.ReplaceKnownStates(paired, trusted, connected);
+    }
+
+    private Task EnsureInitializedAsync(CancellationToken cancellationToken) => _initialized ? Task.CompletedTask : InitializeAsync(cancellationToken);
 
     public void Dispose()
     {
         if (_disposed)
             return;
-
-        try
-        {
-            _terminal.Dispose();
-            _sessionManager.Clear();
-            Logger.Info("Bluetooth service disposed", "BluetoothService");
-        }
-        catch (Exception ex)
-        {
-            Logger.Error($"Error during service disposal: {ex.Message}", "BluetoothService");
-        }
-        finally
-        {
-            _disposed = true;
-        }
-    }
-}
+        _disposed = true;
+        _terminal.Dispose();
+        _session.Clear();
     }
 
-    public static void Remove(BluetoothDevice device)
+    public async ValueTask DisposeAsync()
     {
-        Shell.Run(
-            BluetoothCommands.Remove(device.Mac)
-        );
-    }
-
-    public static string Info(BluetoothDevice device)
-    {
-        return Shell.Run(
-            BluetoothCommands.Info(device.Mac)
-        );
+        if (_disposed)
+            return;
+        _disposed = true;
+        await _terminal.DisposeAsync().ConfigureAwait(false);
+        _session.Clear();
     }
 }

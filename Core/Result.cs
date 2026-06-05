@@ -112,13 +112,13 @@ public abstract class Result<T>
     public bool IsFailure => this is Failure;
 
     public Result<TOut> Bind<TOut>(
-        Func<T, Result<TOut>> f
+        Func<T, Result<TOut>> bind
     )
     {
         return this switch
         {
-            Success s => f(s.Value),
-            Failure f => new Result<TOut>.Failure(f.Error),
+            Success success => bind(success.Value),
+            Failure failure => new Result<TOut>.Failure(failure.Error),
             _ => throw new InvalidOperationException()
         };
     }
