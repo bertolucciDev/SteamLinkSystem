@@ -1,128 +1,108 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Core.Logging;
 
 namespace Core.Bluetooth;
 
-/// <summary>
-/// Manages internal Bluetooth session state and device cache.
-/// 
-/// Responsibilities:
-/// - Maintain current device cache
-/// - Track scanning state
-/// - Prevent unnecessary rescans
-/// - Manage session lifecycle
-/// 
-/// Reference: PRD Section 18 (State Management)
-/// </summary>
-public class BluetoothSessionManager
+public sealed class BluetoothSessionManager
 {
-    private List<BluetoothDevice> _deviceCache = new();
-    private bool _isScanning = false;
-    private DateTime _lastScanTime = DateTime.MinValue;
-    private TimeSpan _scanCacheExpiry = TimeSpan.FromSeconds(30);
     private readonly object _lock = new();
+    private readonly Dictionary<string, BluetoothDevice> _devices = new(StringComparer.OrdinalIgnoreCase);
+    private readonly TimeSpan _cacheDuration = TimeSpan.FromSeconds(30);
+    private DateTime _lastRefreshUtc = DateTime.MinValue;
 
-    public IReadOnlyList<BluetoothDevice> CachedDevices
+    public bool IsScanning { get; private set; }
+    public bool CacheIsFresh => DateTime.UtcNow - _lastRefreshUtc < _cacheDuration;
+
+    public List<BluetoothDevice> Snapshot()
     {
-        get
-        {
-            lock (_lock)
-            {
-                return _deviceCache.AsReadOnly();
-            }
-        }
+        lock (_lock)
+            return _devices.Values.Select(device => device.Clone()).OrderByDescending(d => d.Connected).ThenByDescending(d => d.Paired).ThenBy(d => d.DisplayName).ToList();
     }
 
-    public bool IsScanning
-    {
-        get
-        {
-            lock (_lock)
-            {
-                return _isScanning;
-            }
-        }
-    }
-
-    public bool ScanCacheValid
-    {
-        get
-        {
-            lock (_lock)
-            {
-                return DateTime.UtcNow - _lastScanTime < _scanCacheExpiry;
-            }
-        }
-    }
-
-    public void UpdateDeviceCache(List<BluetoothDevice> devices)
+    public void Merge(IEnumerable<BluetoothDevice> devices, bool refreshTimestamp = true)
     {
         lock (_lock)
         {
-            _deviceCache = devices;
-            _lastScanTime = DateTime.UtcNow;
+            foreach (var device in devices)
+                UpsertLocked(device);
 
-            Logger.Debug(
-                $"Device cache updated: {devices.Count} devices",
-                "BluetoothSessionManager"
-            );
+            if (refreshTimestamp)
+                _lastRefreshUtc = DateTime.UtcNow;
+
+            Logger.Debug($"Bluetooth cache contains {_devices.Count} devices", "BluetoothSession");
         }
     }
 
-    public void SetScanningState(bool isScanning)
+    public void UpdateState(string mac, bool? paired = null, bool? trusted = null, bool? connected = null)
     {
         lock (_lock)
         {
-            _isScanning = isScanning;
-            Logger.Debug($"Scanning state: {isScanning}", "BluetoothSessionManager");
-        }
-    }
-
-    public BluetoothDevice? FindDevice(string mac)
-    {
-        lock (_lock)
-        {
-            return _deviceCache.FirstOrDefault(d => d.Mac == mac);
-        }
-    }
-
-    public void UpdateDeviceState(
-        string mac,
-        bool? connected = null,
-        bool? paired = null,
-        bool? trusted = null
-    )
-    {
-        lock (_lock)
-        {
-            var device = _deviceCache.FirstOrDefault(d => d.Mac == mac);
-            if (device == null)
+            if (!_devices.TryGetValue(mac, out var device))
                 return;
 
-            if (connected.HasValue)
-                device.Connected = connected.Value;
             if (paired.HasValue)
                 device.Paired = paired.Value;
             if (trusted.HasValue)
                 device.Trusted = trusted.Value;
-
-            Logger.Debug(
-                $"Device {device.Name} state updated: C={device.Connected} P={device.Paired} T={device.Trusted}",
-                "BluetoothSessionManager"
-            );
+            if (connected.HasValue)
+                device.Connected = connected.Value;
         }
+    }
+
+
+    public void ReplaceKnownStates(IEnumerable<BluetoothDevice> paired, IEnumerable<BluetoothDevice> trusted, IEnumerable<BluetoothDevice> connected)
+    {
+        var pairedMacs = paired.Select(d => d.Mac).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var trustedMacs = trusted.Select(d => d.Mac).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var connectedMacs = connected.Select(d => d.Mac).ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        lock (_lock)
+        {
+            foreach (var device in _devices.Values)
+            {
+                device.Paired = pairedMacs.Contains(device.Mac);
+                device.Trusted = trustedMacs.Contains(device.Mac);
+                device.Connected = connectedMacs.Contains(device.Mac);
+            }
+        }
+    }
+
+    public void Remove(string mac)
+    {
+        lock (_lock)
+            _devices.Remove(mac);
+    }
+
+    public void SetScanning(bool scanning)
+    {
+        lock (_lock)
+            IsScanning = scanning;
     }
 
     public void Clear()
     {
         lock (_lock)
         {
-            _deviceCache.Clear();
-            _isScanning = false;
-            _lastScanTime = DateTime.MinValue;
-
-            Logger.Debug("Session state cleared", "BluetoothSessionManager");
+            _devices.Clear();
+            IsScanning = false;
+            _lastRefreshUtc = DateTime.MinValue;
         }
+    }
+
+    private void UpsertLocked(BluetoothDevice incoming)
+    {
+        if (!_devices.TryGetValue(incoming.Mac, out var existing))
+        {
+            _devices[incoming.Mac] = incoming.Clone();
+            return;
+        }
+
+        if (!string.IsNullOrWhiteSpace(incoming.Name) && incoming.Name != "Unknown Device")
+            existing.Name = incoming.Name;
+        existing.Paired = incoming.Paired || existing.Paired;
+        existing.Trusted = incoming.Trusted || existing.Trusted;
+        existing.Connected = incoming.Connected || existing.Connected;
+        existing.Rssi = incoming.Rssi ?? existing.Rssi;
+        existing.BatteryLevel = incoming.BatteryLevel ?? existing.BatteryLevel;
+        existing.LastSeenUtc = incoming.LastSeenUtc > existing.LastSeenUtc ? incoming.LastSeenUtc : existing.LastSeenUtc;
     }
 }

@@ -1,123 +1,141 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Text.RegularExpressions;
+using Core.Logging;
 
 namespace Core.Bluetooth;
 
-/// <summary>
-/// Parses bluetoothctl output into strongly-typed models.
-/// 
-/// Handles various output formats and safely manages malformed data.
-/// 
-/// Reference: PRD Section 10 (BluetoothParser)
-/// </summary>
-public static class BluetoothParser
+public static partial class BluetoothParser
 {
     public static List<BluetoothDevice> ParseDevices(string output)
     {
-        var devices = new List<BluetoothDevice>();
+        var devices = new Dictionary<string, BluetoothDevice>(StringComparer.OrdinalIgnoreCase);
 
-        if (string.IsNullOrWhiteSpace(output))
-            return devices;
-
-        var lines = output.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-
-        foreach (var line in lines)
+        foreach (var rawLine in SplitLines(output))
         {
-            if (!line.StartsWith("Device", StringComparison.OrdinalIgnoreCase))
+            var line = CleanLine(rawLine);
+            var match = DeviceLineRegex().Match(line);
+            if (!match.Success)
                 continue;
 
-            var device = ParseDeviceLine(line);
-            if (device != null)
-                devices.Add(device);
-        }
-
-        return devices;
-    }
-
-    private static BluetoothDevice? ParseDeviceLine(string line)
-    {
-        try
-        {
-            // Format: "Device 00:1B:66:12:34:56 Xbox Controller"
-            var parts = line.Split(new[] { ' ' }, 3, StringSplitOptions.RemoveEmptyEntries);
-
-            if (parts.Length < 3)
+            var mac = match.Groups[1].Value.ToUpperInvariant();
+            var name = match.Groups[2].Value.Trim();
+            if (!IsValidMac(mac))
             {
-                Logger.Warning($"Failed to parse device line: {line}", "BluetoothParser");
-                return null;
+                Logger.Warning($"Ignoring malformed bluetoothctl device line: {line}", "BluetoothParser");
+                continue;
             }
 
-            var mac = parts[1].Trim();
-            var name = parts[2].Trim();
-
-            if (!IsValidMacAddress(mac))
+            if (!devices.TryGetValue(mac, out var device))
             {
-                Logger.Warning($"Invalid MAC address: {mac}", "BluetoothParser");
-                return null;
+                device = new BluetoothDevice { Mac = mac };
+                devices.Add(mac, device);
             }
 
-            return new BluetoothDevice
-            {
-                Mac = mac,
-                Name = name,
-                DiscoveredAt = DateTime.UtcNow
-            };
+            if (!string.IsNullOrWhiteSpace(name))
+                device.Name = name;
+
+            device.LastSeenUtc = DateTime.UtcNow;
         }
-        catch (Exception ex)
-        {
-            Logger.Error($"Exception parsing device line: {ex.Message}", "BluetoothParser");
-            return null;
-        }
+
+        return devices.Values.OrderByDescending(d => d.Connected).ThenBy(d => d.DisplayName).ToList();
     }
 
-    public static List<BluetoothDevice> EnrichDeviceStates(
-        List<BluetoothDevice> allDevices,
-        List<BluetoothDevice> pairedDevices,
-        List<BluetoothDevice> connectedDevices,
-        List<BluetoothDevice> trustedDevices
-    )
+    public static BluetoothDevice EnrichFromInfo(BluetoothDevice device, string infoOutput)
     {
-        var pairedMacs = pairedDevices.Select(d => d.Mac).ToHashSet();
-        var connectedMacs = connectedDevices.Select(d => d.Mac).ToHashSet();
-        var trustedMacs = trustedDevices.Select(d => d.Mac).ToHashSet();
-
-        foreach (var device in allDevices)
+        var copy = device.Clone();
+        foreach (var rawLine in SplitLines(infoOutput))
         {
-            device.Paired = pairedMacs.Contains(device.Mac);
-            device.Connected = connectedMacs.Contains(device.Mac);
-            device.Trusted = trustedMacs.Contains(device.Mac);
+            var line = CleanLine(rawLine).Trim();
+            if (line.StartsWith("Name:", StringComparison.OrdinalIgnoreCase))
+                copy.Name = line[5..].Trim();
+            else if (line.StartsWith("Paired:", StringComparison.OrdinalIgnoreCase))
+                copy.Paired = ParseBoolean(line[7..]);
+            else if (line.StartsWith("Trusted:", StringComparison.OrdinalIgnoreCase))
+                copy.Trusted = ParseBoolean(line[8..]);
+            else if (line.StartsWith("Connected:", StringComparison.OrdinalIgnoreCase))
+                copy.Connected = ParseBoolean(line[10..]);
+            else if (line.StartsWith("RSSI:", StringComparison.OrdinalIgnoreCase) && int.TryParse(line[5..].Trim(), out var rssi))
+                copy.Rssi = rssi;
+            else if (line.StartsWith("Battery Percentage:", StringComparison.OrdinalIgnoreCase))
+                copy.BatteryLevel = ParseBattery(line);
         }
 
-        return allDevices;
+        return copy;
     }
 
-    public static string ParseCommandResponse(string output)
+    public static string CleanResponse(string output)
     {
-        if (string.IsNullOrWhiteSpace(output))
-            return "";
-
-        // Remove common bluetoothctl prompts and clean up output
-        var lines = output.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None)
-            .Where(line => !line.EndsWith("[bluetooth]#", StringComparison.OrdinalIgnoreCase))
+        var lines = SplitLines(output)
+            .Select(CleanLine)
             .Where(line => !string.IsNullOrWhiteSpace(line))
+            .Where(line => !line.TrimEnd().EndsWith("[bluetooth]#", StringComparison.OrdinalIgnoreCase))
+            .Where(line => !line.Contains("Changing power on succeeded", StringComparison.OrdinalIgnoreCase))
             .ToList();
 
-        return string.Join("\n", lines).Trim();
+        return string.Join(Environment.NewLine, lines).Trim();
     }
 
-    private static bool IsValidMacAddress(string mac)
+    public static List<BluetoothDevice> MergeDevices(params IEnumerable<BluetoothDevice>[] groups)
     {
-        if (string.IsNullOrEmpty(mac))
-            return false;
+        var merged = new Dictionary<string, BluetoothDevice>(StringComparer.OrdinalIgnoreCase);
+        foreach (var device in groups.SelectMany(group => group))
+        {
+            if (string.IsNullOrWhiteSpace(device.Mac) || !IsValidMac(device.Mac))
+                continue;
 
-        var parts = mac.Split(':');
-        if (parts.Length != 6)
-            return false;
+            if (!merged.TryGetValue(device.Mac, out var existing))
+            {
+                merged[device.Mac] = device.Clone();
+                continue;
+            }
 
-        return parts.All(part =>
-            part.Length == 2 &&
-            byte.TryParse(part, System.Globalization.NumberStyles.HexNumber, null, out _)
-        );
+            if (!string.IsNullOrWhiteSpace(device.Name) && device.Name != "Unknown Device")
+                existing.Name = device.Name;
+            existing.Paired |= device.Paired;
+            existing.Trusted |= device.Trusted;
+            existing.Connected |= device.Connected;
+            existing.Rssi ??= device.Rssi;
+            existing.BatteryLevel ??= device.BatteryLevel;
+            existing.LastSeenUtc = device.LastSeenUtc > existing.LastSeenUtc ? device.LastSeenUtc : existing.LastSeenUtc;
+        }
+
+        return merged.Values.OrderByDescending(d => d.Connected).ThenByDescending(d => d.Paired).ThenBy(d => d.DisplayName).ToList();
     }
+
+    public static void MarkState(IEnumerable<BluetoothDevice> devices, bool? paired = null, bool? trusted = null, bool? connected = null)
+    {
+        foreach (var device in devices)
+        {
+            if (paired.HasValue)
+                device.Paired = paired.Value;
+            if (trusted.HasValue)
+                device.Trusted = trusted.Value;
+            if (connected.HasValue)
+                device.Connected = connected.Value;
+        }
+    }
+
+    private static IEnumerable<string> SplitLines(string output) => (output ?? string.Empty).Split(new[] { "\r\n", "\n", "\r" }, StringSplitOptions.None);
+
+    private static string CleanLine(string line) => AnsiRegex().Replace(line, string.Empty)
+        .Replace("[bluetooth]#", string.Empty, StringComparison.OrdinalIgnoreCase)
+        .Trim();
+
+    private static bool ParseBoolean(string value) => value.Trim().StartsWith("yes", StringComparison.OrdinalIgnoreCase);
+
+    private static int? ParseBattery(string line)
+    {
+        var match = Regex.Match(line, @"\((\d+)\)");
+        return match.Success && int.TryParse(match.Groups[1].Value, out var value) ? value : null;
+    }
+
+    private static bool IsValidMac(string mac) => MacRegex().IsMatch(mac);
+
+    [GeneratedRegex(@"^Device\s+([0-9A-Fa-f:]{17})\s*(.*)$", RegexOptions.Compiled)]
+    private static partial Regex DeviceLineRegex();
+
+    [GeneratedRegex(@"^[0-9A-Fa-f]{2}(:[0-9A-Fa-f]{2}){5}$", RegexOptions.Compiled)]
+    private static partial Regex MacRegex();
+
+    [GeneratedRegex(@"\x1B\[[0-?]*[ -/]*[@-~]", RegexOptions.Compiled)]
+    private static partial Regex AnsiRegex();
 }

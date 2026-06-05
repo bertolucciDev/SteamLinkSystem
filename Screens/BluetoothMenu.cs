@@ -1,145 +1,177 @@
-using Spectre.Console;
+using Components;
 using Core.Bluetooth;
+using Core.Logging;
+using Spectre.Console;
+using Utils;
 
 namespace Screens;
 
-public static class BluetoothMenu
+public sealed class BluetoothMenu
 {
-    public static void Show()
+    private readonly BluetoothService _bluetooth;
+
+    public BluetoothMenu(BluetoothService bluetooth)
     {
-        BluetoothService.Initialize();
+        _bluetooth = bluetooth;
+    }
+
+    public async Task ShowAsync()
+    {
+        await TryInitializeAsync().ConfigureAwait(false);
 
         while (true)
         {
-            AnsiConsole.Clear();
+            MenuStyles.Header("Bluetooth", "persistent BlueZ terminal session");
+            var devices = _bluetooth.CachedDevices;
+            if (devices.Count == 0)
+                AnsiConsole.MarkupLine("[dim]No cached devices yet. Run Scan Devices to discover controllers.[/]\n");
 
-            var devices =
-                BluetoothService.GetDevices();
+            var choices = new List<string> { "Scan Devices", "Refresh Devices" };
+            choices.AddRange(devices.Select(FormatDeviceChoice));
+            choices.Add("Back");
 
-            var prompt =
-                new SelectionPrompt<string>()
-                    .Title("[blue]Bluetooth Devices[/]");
-
-            prompt.AddChoice("Scan Devices");
-
-            foreach (var device in devices)
-            {
-                var status = "";
-
-                if (device.Connected)
-                    status += "[green][CONNECTED][/ ] ";
-
-                if (device.Paired)
-                    status += "[yellow][PAIRED][/ ] ";
-
-                prompt.AddChoice(
-                    $"{status}{device.Name} ({device.Mac})"
-                );
-            }
-
-            prompt.AddChoice("Back");
-
-            var selected =
-                AnsiConsole.Prompt(prompt);
-
+            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Bluetooth").AddChoices(choices));
             if (selected == "Back")
                 return;
 
             if (selected == "Scan Devices")
             {
-                Scan();
+                await ScanAsync().ConfigureAwait(false);
                 continue;
             }
 
-            var selectedDevice =
-                devices.First(
-                    x => selected.Contains(x.Mac)
-                );
+            if (selected == "Refresh Devices")
+            {
+                await RefreshAsync().ConfigureAwait(false);
+                continue;
+            }
 
-            DeviceMenu(selectedDevice);
+            var device = devices.FirstOrDefault(d => selected.Contains(d.Mac, StringComparison.OrdinalIgnoreCase));
+            if (device != null)
+                await ShowDeviceMenuAsync(device).ConfigureAwait(false);
         }
     }
 
-    static void Scan()
+    private async Task TryInitializeAsync()
     {
-        AnsiConsole.Clear();
-
-        AnsiConsole.Status()
-            .Start(
-                "Scanning bluetooth devices...",
-                ctx =>
-                {
-                    BluetoothService.Scan();
-                }
-            );
+        try
+        {
+            await AnsiConsole.Status().Spinner(Spinner.Known.Dots).StartAsync("Initializing Bluetooth adapter...", _ => _bluetooth.InitializeAsync()).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            Logger.Error(ex.Message, "BluetoothUI");
+            Ui.ShowError("Bluetooth is unavailable. Ensure BlueZ and bluetoothctl are installed and accessible. " + ex.Message);
+        }
     }
 
-    static void DeviceMenu(
-        BluetoothDevice device
-    )
+    private async Task ScanAsync()
+    {
+        try
+        {
+            await AnsiConsole.Status().Spinner(Spinner.Known.Dots).StartAsync("Scanning for Bluetooth devices...", _ => _bluetooth.ScanDevicesAsync(TimeSpan.FromSeconds(8))).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            Ui.ShowError(ex.Message);
+        }
+    }
+
+    private async Task RefreshAsync()
+    {
+        try
+        {
+            await AnsiConsole.Status().Spinner(Spinner.Known.Dots).StartAsync("Refreshing device state...", _ => _bluetooth.ListDevicesAsync(forceRefresh: true)).ConfigureAwait(false);
+        }
+        catch (Exception ex)
+        {
+            Ui.ShowError(ex.Message);
+        }
+    }
+
+    private async Task ShowDeviceMenuAsync(BluetoothDevice device)
     {
         while (true)
         {
-            AnsiConsole.Clear();
+            MenuStyles.Header("Device Menu", $"{device.DisplayName} // {device.Mac}");
+            AnsiConsole.Write(BuildDevicePanel(device));
+            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Action").AddChoices("Connect", "Disconnect", "Pair", "Trust", "Remove", "Info", "Back"));
 
-            var option =
-                AnsiConsole.Prompt(
-                    new SelectionPrompt<string>()
-                        .Title(
-                            $"[green]{device.Name}[/]"
-                        )
-                        .AddChoices(
-                            "Connect",
-                            "Disconnect",
-                            "Pair",
-                            "Info",
-                            "Remove",
-                            "Back"
-                        )
-                );
-
-            switch (option)
+            try
             {
-                case "Connect":
-                    BluetoothService.Connect(device);
-                    break;
-
-                case "Disconnect":
-                    BluetoothService.Disconnect(device);
-                    break;
-
-                case "Pair":
-                    BluetoothService.Pair(device);
-                    break;
-
-                case "Info":
-                    ShowInfo(device);
-                    break;
-
-                case "Remove":
-                    BluetoothService.Remove(device);
-                    return;
-
-                case "Back":
-                    return;
+                switch (selected)
+                {
+                    case "Connect":
+                        await RunDeviceActionAsync("Connecting...", () => _bluetooth.ConnectDeviceAsync(device)).ConfigureAwait(false);
+                        break;
+                    case "Disconnect":
+                        await RunDeviceActionAsync("Disconnecting...", () => _bluetooth.DisconnectDeviceAsync(device)).ConfigureAwait(false);
+                        break;
+                    case "Pair":
+                        await RunDeviceActionAsync("Pairing...", () => _bluetooth.PairDeviceAsync(device)).ConfigureAwait(false);
+                        break;
+                    case "Trust":
+                        await RunDeviceActionAsync("Trusting...", () => _bluetooth.TrustDeviceAsync(device)).ConfigureAwait(false);
+                        break;
+                    case "Remove":
+                        await RunDeviceActionAsync("Removing...", () => _bluetooth.RemoveDeviceAsync(device)).ConfigureAwait(false);
+                        return;
+                    case "Info":
+                        await ShowInfoAsync(device).ConfigureAwait(false);
+                        break;
+                    case "Back":
+                        return;
+                }
             }
+            catch (Exception ex)
+            {
+                Ui.ShowError(ex.Message);
+            }
+
+            device = _bluetooth.CachedDevices.FirstOrDefault(d => d.Mac.Equals(device.Mac, StringComparison.OrdinalIgnoreCase)) ?? device;
         }
     }
 
-    static void ShowInfo(
-        BluetoothDevice device
-    )
+    private static Panel BuildDevicePanel(BluetoothDevice device)
     {
-        AnsiConsole.Clear();
+        var grid = new Grid().AddColumn().AddColumn();
+        grid.AddRow("MAC", Markup.Escape(device.Mac));
+        grid.AddRow("Paired", device.Paired ? "[green]yes[/]" : "[dim]no[/]");
+        grid.AddRow("Trusted", device.Trusted ? "[green]yes[/]" : "[dim]no[/]");
+        grid.AddRow("Connected", device.Connected ? "[green]yes[/]" : "[dim]no[/]");
+        grid.AddRow("RSSI", device.Rssi?.ToString() ?? "[dim]unknown[/]");
+        grid.AddRow("Battery", device.BatteryLevel is null ? "[dim]unknown[/]" : $"{device.BatteryLevel}%");
+        return new Panel(grid).Header(device.DisplayName).Border(BoxBorder.Rounded);
+    }
 
-        var info =
-            BluetoothService.Info(device);
+    private async Task RunDeviceActionAsync(string status, Func<Task<string>> action)
+    {
+        var response = await AnsiConsole.Status().Spinner(Spinner.Known.Dots).StartAsync(status, _ => action()).ConfigureAwait(false);
+        if (!string.IsNullOrWhiteSpace(response))
+        {
+            AnsiConsole.Write(new Panel(Markup.Escape(response)).Header("bluetoothctl"));
+            Ui.Pause();
+        }
+    }
 
-        AnsiConsole.Write(
-            new Panel(info)
-                .Header("Device Info")
-        );
+    private async Task ShowInfoAsync(BluetoothDevice device)
+    {
+        var response = await AnsiConsole.Status().Spinner(Spinner.Known.Dots).StartAsync("Reading device info...", _ => _bluetooth.GetDeviceInfoAsync(device)).ConfigureAwait(false);
+        MenuStyles.Header("Device Info", device.DisplayName);
+        AnsiConsole.Write(new Panel(Markup.Escape(string.IsNullOrWhiteSpace(response) ? "No details returned." : response)).Header("bluetoothctl info").Border(BoxBorder.Rounded));
+        Ui.Pause();
+    }
 
-        Console.ReadKey();
+    private static string FormatDeviceChoice(BluetoothDevice device)
+    {
+        var tags = new List<string>();
+        if (device.Connected)
+            tags.Add("[green]CONNECTED[/]");
+        if (device.Paired)
+            tags.Add("[yellow]PAIRED[/]");
+        if (device.Trusted)
+            tags.Add("[blue]TRUSTED[/]");
+        var prefix = tags.Count == 0 ? "[dim]NEW[/]" : string.Join(" ", tags);
+        return $"{prefix} {Markup.Escape(device.DisplayName)} ({device.Mac})";
     }
 }
