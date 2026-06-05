@@ -1,12 +1,15 @@
 using Core.Bluetooth;
+using Core.Controllers;
 using Core.Logging;
 using Screens;
 
 await using var bluetooth = new BluetoothService();
+using var controllers = new ControllerService();
 Console.CancelKeyPress += (_, args) =>
 {
     args.Cancel = true;
     Logger.Info("Ctrl+C requested; exiting cleanly", "Program");
+    controllers.Dispose();
     bluetooth.Dispose();
     Environment.Exit(0);
 };
@@ -14,7 +17,8 @@ Console.CancelKeyPress += (_, args) =>
 try
 {
     Logger.Info("SteamLinkSystem starting", "Program");
-    var mainMenu = new MainMenu(bluetooth);
+    controllers.Start();
+    var mainMenu = new MainMenu(bluetooth, controllers);
     await mainMenu.ShowAsync().ConfigureAwait(false);
 }
 catch (Exception ex)

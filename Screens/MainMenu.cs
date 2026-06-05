@@ -15,19 +15,24 @@ public sealed class MainMenu
     private readonly SteamService _steamService = new();
     private readonly NetworkService _networkService = new();
     private readonly PowerService _powerService = new();
-    private readonly ControllerService _controllerService = new();
+    private readonly ControllerService _controllerService;
 
-    public MainMenu(BluetoothService bluetoothService)
+    public MainMenu(BluetoothService bluetoothService, ControllerService controllerService)
     {
-        _bluetoothMenu = new BluetoothMenu(bluetoothService);
+        _controllerService = controllerService;
+        _controllerService.Start();
+        _bluetoothMenu = new BluetoothMenu(bluetoothService, controllerService);
     }
 
     public async Task ShowAsync()
     {
         while (true)
         {
-            MenuStyles.Header("Main Menu", "embedded Linux gaming shell");
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Main Menu").AddChoices("Bluetooth", "Steam Link", "Controllers", "Network", "System", "Settings", "Exit"));
+            var selected = await MenuStyles.SelectAsync(
+                "Main Menu",
+                new[] { "Bluetooth", "Steam Link", "Controllers", "Network", "System", "Settings", "Exit" },
+                _controllerService,
+                () => MenuStyles.Header("Main Menu", "embedded Linux gaming shell"));
 
             switch (selected)
             {
@@ -38,7 +43,7 @@ public sealed class MainMenu
                     await ShowSteamAsync().ConfigureAwait(false);
                     break;
                 case "Controllers":
-                    ShowControllers();
+                    await ShowControllersAsync().ConfigureAwait(false);
                     break;
                 case "Network":
                     await ShowNetworkAsync().ConfigureAwait(false);
@@ -47,7 +52,7 @@ public sealed class MainMenu
                     await ShowSystemAsync().ConfigureAwait(false);
                     break;
                 case "Settings":
-                    ShowSettings();
+                    await ShowSettingsAsync().ConfigureAwait(false);
                     break;
                 case "Exit":
                     return;
@@ -59,13 +64,16 @@ public sealed class MainMenu
     {
         while (true)
         {
-            MenuStyles.Header("Steam Link", "Flatpak launcher");
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Steam Link").AddChoices("Launch Steam Link", "Back"));
+            var selected = await MenuStyles.SelectAsync(
+                "Steam Link",
+                new[] { "Launch Steam Link", "Back" },
+                _controllerService,
+                () => MenuStyles.Header("Steam Link", "Flatpak launcher"));
             if (selected == "Back")
                 return;
 
             var result = await _steamService.LaunchSteamLinkAsync().ConfigureAwait(false);
-            ShowCommandResult(result.CombinedOutput, result.Success ? "Steam Link" : "Steam Link Error");
+            await ShowCommandResultAsync(result.CombinedOutput, result.Success ? "Steam Link" : "Steam Link Error").ConfigureAwait(false);
         }
     }
 
@@ -73,15 +81,18 @@ public sealed class MainMenu
     {
         while (true)
         {
-            MenuStyles.Header("Network", "diagnostics foundation");
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Network").AddChoices("IP Status", "Connectivity Test", "Back"));
+            var selected = await MenuStyles.SelectAsync(
+                "Network",
+                new[] { "IP Status", "Connectivity Test", "Back" },
+                _controllerService,
+                () => MenuStyles.Header("Network", "diagnostics foundation"));
             if (selected == "Back")
                 return;
 
             var result = selected == "IP Status"
                 ? await _networkService.GetIpStatusAsync().ConfigureAwait(false)
                 : await _networkService.TestConnectivityAsync().ConfigureAwait(false);
-            ShowCommandResult(result.CombinedOutput, selected);
+            await ShowCommandResultAsync(result.CombinedOutput, selected).ConfigureAwait(false);
         }
     }
 
@@ -89,39 +100,51 @@ public sealed class MainMenu
     {
         while (true)
         {
-            MenuStyles.Header("System", "power controls");
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("System").AddChoices("Shutdown", "Reboot", "Back"));
+            var selected = await MenuStyles.SelectAsync(
+                "System",
+                new[] { "Shutdown", "Reboot", "Back" },
+                _controllerService,
+                () => MenuStyles.Header("System", "power controls"));
             if (selected == "Back")
                 return;
 
-            var confirm = AnsiConsole.Confirm($"Execute [red]{selected}[/] now?", defaultValue: false);
-            if (!confirm)
+            var confirm = await MenuStyles.SelectAsync(
+                "Confirm",
+                new[] { "No", "Yes" },
+                _controllerService,
+                () =>
+                {
+                    MenuStyles.Header("Confirm", selected);
+                    AnsiConsole.MarkupLine($"[red]Execute {Markup.Escape(selected)} now?[/]");
+                    AnsiConsole.WriteLine();
+                });
+            if (confirm != "Yes")
                 continue;
 
             var result = selected == "Shutdown"
                 ? await _powerService.PowerOffAsync().ConfigureAwait(false)
                 : await _powerService.RebootAsync().ConfigureAwait(false);
-            ShowCommandResult(result.CombinedOutput, selected);
+            await ShowCommandResultAsync(result.CombinedOutput, selected).ConfigureAwait(false);
         }
     }
 
-    private void ShowControllers()
+    private async Task ShowControllersAsync()
     {
-        MenuStyles.Header("Controllers", "navigation preparation");
+        MenuStyles.Header("Controllers", "universal gamepad navigation");
         AnsiConsole.Write(new Panel(Markup.Escape(_controllerService.Status)).Border(BoxBorder.Rounded));
-        Ui.Pause();
+        await Ui.PauseAsync(_controllerService).ConfigureAwait(false);
     }
 
-    private static void ShowSettings()
+    private async Task ShowSettingsAsync()
     {
         MenuStyles.Header("Settings", "future configuration");
         AnsiConsole.Write(new Panel("[dim]Settings foundation ready for terminal, controller, and subsystem preferences.[/]").Border(BoxBorder.Rounded));
-        Ui.Pause();
+        await Ui.PauseAsync(_controllerService).ConfigureAwait(false);
     }
 
-    private static void ShowCommandResult(string output, string title)
+    private async Task ShowCommandResultAsync(string output, string title)
     {
         AnsiConsole.Write(new Panel(Markup.Escape(string.IsNullOrWhiteSpace(output) ? "Command completed without output." : output)).Header(title).Border(BoxBorder.Rounded));
-        Ui.Pause();
+        await Ui.PauseAsync(_controllerService).ConfigureAwait(false);
     }
 }

@@ -1,5 +1,6 @@
 using Components;
 using Core.Bluetooth;
+using Core.Controllers;
 using Core.Logging;
 using Spectre.Console;
 using Utils;
@@ -9,10 +10,12 @@ namespace Screens;
 public sealed class BluetoothMenu
 {
     private readonly BluetoothService _bluetooth;
+    private readonly ControllerService _controller;
 
-    public BluetoothMenu(BluetoothService bluetooth)
+    public BluetoothMenu(BluetoothService bluetooth, ControllerService controller)
     {
         _bluetooth = bluetooth;
+        _controller = controller;
     }
 
     public async Task ShowAsync()
@@ -21,16 +24,21 @@ public sealed class BluetoothMenu
 
         while (true)
         {
-            MenuStyles.Header("Bluetooth", "persistent BlueZ terminal session");
             var devices = _bluetooth.CachedDevices;
-            if (devices.Count == 0)
-                AnsiConsole.MarkupLine("[dim]No cached devices yet. Run Scan Devices to discover controllers.[/]\n");
-
             var choices = new List<string> { "Scan Devices", "Refresh Devices" };
             choices.AddRange(devices.Select(FormatDeviceChoice));
             choices.Add("Back");
 
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Bluetooth").AddChoices(choices));
+            var selected = await MenuStyles.SelectAsync(
+                "Bluetooth",
+                choices,
+                _controller,
+                () =>
+                {
+                    MenuStyles.Header("Bluetooth", "persistent BlueZ terminal session");
+                    if (devices.Count == 0)
+                        AnsiConsole.MarkupLine("[dim]No cached devices yet. Run Scan Devices to discover controllers.[/]\n");
+                });
             if (selected == "Back")
                 return;
 
@@ -61,7 +69,7 @@ public sealed class BluetoothMenu
         catch (Exception ex)
         {
             Logger.Error(ex.Message, "BluetoothUI");
-            Ui.ShowError("Bluetooth is unavailable. Ensure BlueZ and bluetoothctl are installed and accessible. " + ex.Message);
+            await Ui.ShowErrorAsync(_controller, "Bluetooth is unavailable. Ensure BlueZ and bluetoothctl are installed and accessible. " + ex.Message).ConfigureAwait(false);
         }
     }
 
@@ -73,7 +81,7 @@ public sealed class BluetoothMenu
         }
         catch (Exception ex)
         {
-            Ui.ShowError(ex.Message);
+            await Ui.ShowErrorAsync(_controller, ex.Message).ConfigureAwait(false);
         }
     }
 
@@ -85,7 +93,7 @@ public sealed class BluetoothMenu
         }
         catch (Exception ex)
         {
-            Ui.ShowError(ex.Message);
+            await Ui.ShowErrorAsync(_controller, ex.Message).ConfigureAwait(false);
         }
     }
 
@@ -93,9 +101,15 @@ public sealed class BluetoothMenu
     {
         while (true)
         {
-            MenuStyles.Header("Device Menu", $"{device.DisplayName} // {device.Mac}");
-            AnsiConsole.Write(BuildDevicePanel(device));
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Action").AddChoices("Connect", "Disconnect", "Pair", "Trust", "Remove", "Info", "Back"));
+            var selected = await MenuStyles.SelectAsync(
+                "Action",
+                new[] { "Connect", "Disconnect", "Pair", "Trust", "Remove", "Info", "Back" },
+                _controller,
+                () =>
+                {
+                    MenuStyles.Header("Device Menu", $"{device.DisplayName} // {device.Mac}");
+                    AnsiConsole.Write(BuildDevicePanel(device));
+                });
 
             try
             {
@@ -125,7 +139,7 @@ public sealed class BluetoothMenu
             }
             catch (Exception ex)
             {
-                Ui.ShowError(ex.Message);
+                await Ui.ShowErrorAsync(_controller, ex.Message).ConfigureAwait(false);
             }
 
             device = _bluetooth.CachedDevices.FirstOrDefault(d => d.Mac.Equals(device.Mac, StringComparison.OrdinalIgnoreCase)) ?? device;
@@ -150,7 +164,7 @@ public sealed class BluetoothMenu
         if (!string.IsNullOrWhiteSpace(response))
         {
             AnsiConsole.Write(new Panel(Markup.Escape(response)).Header("bluetoothctl"));
-            Ui.Pause();
+            await Ui.PauseAsync(_controller).ConfigureAwait(false);
         }
     }
 
@@ -159,7 +173,7 @@ public sealed class BluetoothMenu
         var response = await AnsiConsole.Status().Spinner(Spinner.Known.Dots).StartAsync("Reading device info...", _ => _bluetooth.GetDeviceInfoAsync(device)).ConfigureAwait(false);
         MenuStyles.Header("Device Info", device.DisplayName);
         AnsiConsole.Write(new Panel(Markup.Escape(string.IsNullOrWhiteSpace(response) ? "No details returned." : response)).Header("bluetoothctl info").Border(BoxBorder.Rounded));
-        Ui.Pause();
+        await Ui.PauseAsync(_controller).ConfigureAwait(false);
     }
 
     private static string FormatDeviceChoice(BluetoothDevice device)
