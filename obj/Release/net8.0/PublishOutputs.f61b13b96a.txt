@@ -1,0 +1,7 @@
+/home/steamlinkclient/SteamLinkSystem/publish/SteamLinkSystem
+/home/steamlinkclient/SteamLinkSystem/publish/SteamLinkSystem.dll
+/home/steamlinkclient/SteamLinkSystem/publish/SteamLinkSystem.deps.json
+/home/steamlinkclient/SteamLinkSystem/publish/SteamLinkSystem.runtimeconfig.json
+/home/steamlinkclient/SteamLinkSystem/publish/SteamLinkSystem.pdb
+/home/steamlinkclient/SteamLinkSystem/publish/Spectre.Console.dll
+/home/steamlinkclient/SteamLinkSystem/publish/Spectre.Console.Ansi.dll

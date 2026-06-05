@@ -1,0 +1,46 @@
+2026-06-05 23:26:13.129Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:26:13.147Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:26:13.152Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:26:13.152Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:26:13.152Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:26:13.152Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:26:13.153Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:26:13.153Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:26:13.153Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:26:13.153Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:26:13.154Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:26:13.154Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:26:13.153Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:30:38.875Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:30:39.041Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:33:14.084Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:33:14.266Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:41:19.324Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:41:30.900Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:41:30.919Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:43:45.124Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:43:45.142Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:43:45.146Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:43:45.146Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:43:45.147Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:43:45.147Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:43:45.147Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:43:45.147Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:43:45.147Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:43:45.147Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:43:45.148Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:43:45.148Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:43:45.148Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:45:57.121Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:45:57.158Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:45:57.163Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:45:57.163Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:45:57.163Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:45:57.163Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:45:57.164Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:45:57.164Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:45:57.164Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:45:57.164Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:45:57.164Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:45:57.164Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:45:57.164Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.

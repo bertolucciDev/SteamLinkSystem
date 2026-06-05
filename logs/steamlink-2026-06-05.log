@@ -1,0 +1,292 @@
+2026-06-05 20:58:46.670Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 20:58:49.113Z [Info] [BluetoothTerminal] Starting persistent bluetoothctl process
+2026-06-05 20:58:49.134Z [Info] [Bluetooth] Initializing adapter state
+2026-06-05 20:58:49.148Z [Debug] [BluetoothTerminal] bluetoothctl <= power on
+2026-06-05 20:58:49.595Z [Debug] [BluetoothTerminal] bluetoothctl <= agent on
+2026-06-05 20:58:49.995Z [Debug] [BluetoothTerminal] bluetoothctl <= default-agent
+2026-06-05 20:58:50.395Z [Debug] [BluetoothTerminal] bluetoothctl <= discoverable on
+2026-06-05 20:58:50.803Z [Debug] [BluetoothTerminal] bluetoothctl <= pairable on
+2026-06-05 20:58:51.205Z [Info] [Bluetooth] Bluetooth adapter initialization complete
+2026-06-05 20:58:55.679Z [Info] [Bluetooth] Starting scan for 8s
+2026-06-05 20:58:55.680Z [Debug] [BluetoothTerminal] bluetoothctl <= scan on
+2026-06-05 20:59:04.088Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-05 20:59:04.493Z [Debug] [BluetoothTerminal] bluetoothctl <= scan off
+2026-06-05 20:59:04.912Z [Debug] [BluetoothSession] Bluetooth cache contains 0 devices
+2026-06-05 20:59:04.915Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-05 20:59:05.316Z [Debug] [BluetoothSession] Bluetooth cache contains 0 devices
+2026-06-05 20:59:05.319Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-05 20:59:05.723Z [Debug] [BluetoothSession] Bluetooth cache contains 0 devices
+2026-06-05 20:59:05.724Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-05 20:59:06.125Z [Debug] [BluetoothSession] Bluetooth cache contains 0 devices
+2026-06-05 20:59:06.128Z [Debug] [BluetoothSession] Bluetooth cache contains 0 devices
+2026-06-05 20:59:06.129Z [Info] [Bluetooth] Scan completed with 0 cached devices
+2026-06-05 20:59:10.475Z [Info] [Bluetooth] Starting scan for 8s
+2026-06-05 20:59:10.475Z [Debug] [BluetoothTerminal] bluetoothctl <= scan on
+2026-06-05 20:59:18.888Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-05 20:59:19.287Z [Debug] [BluetoothTerminal] bluetoothctl <= scan off
+2026-06-05 20:59:19.706Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 20:59:19.707Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-05 20:59:20.108Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 20:59:20.109Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-05 20:59:20.507Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 20:59:20.507Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-05 20:59:20.907Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 20:59:20.907Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 20:59:20.908Z [Info] [Bluetooth] Scan completed with 1 cached devices
+2026-06-05 20:59:28.311Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 20:59:28.311Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 20:59:36.661Z [Info] [Bluetooth] Pairing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 20:59:36.661Z [Debug] [BluetoothTerminal] bluetoothctl <= pair AC:FD:93:5E:38:41
+2026-06-05 20:59:40.493Z [Info] [Bluetooth] Trusting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 20:59:40.493Z [Debug] [BluetoothTerminal] bluetoothctl <= trust AC:FD:93:5E:38:41
+2026-06-05 20:59:43.151Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 20:59:43.151Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 20:59:51.951Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 20:59:51.952Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 20:59:58.767Z [Info] [Bluetooth] Pairing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 20:59:58.767Z [Debug] [BluetoothTerminal] bluetoothctl <= pair AC:FD:93:5E:38:41
+2026-06-05 21:00:02.937Z [Info] [Bluetooth] Removing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:00:02.938Z [Debug] [BluetoothTerminal] bluetoothctl <= remove AC:FD:93:5E:38:41
+2026-06-05 21:05:57.659Z [Info] [Program] Ctrl+C requested; exiting cleanly
+2026-06-05 21:05:57.663Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-05 21:17:04.563Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 21:17:04.581Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 21:17:04.586Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 21:17:04.586Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 21:17:04.586Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 21:17:04.586Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 21:17:04.587Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 21:17:04.587Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 21:17:04.587Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 21:17:04.587Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 21:17:04.587Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 21:17:04.588Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 21:17:04.587Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 21:17:13.643Z [Info] [BluetoothTerminal] Starting persistent bluetoothctl process
+2026-06-05 21:17:13.648Z [Info] [Bluetooth] Initializing adapter state
+2026-06-05 21:17:13.650Z [Debug] [BluetoothTerminal] bluetoothctl <= power on
+2026-06-05 21:17:14.072Z [Debug] [BluetoothTerminal] bluetoothctl <= agent on
+2026-06-05 21:17:14.479Z [Debug] [BluetoothTerminal] bluetoothctl <= default-agent
+2026-06-05 21:17:14.883Z [Debug] [BluetoothTerminal] bluetoothctl <= discoverable on
+2026-06-05 21:17:15.340Z [Debug] [BluetoothTerminal] bluetoothctl <= pairable on
+2026-06-05 21:17:15.747Z [Info] [Bluetooth] Bluetooth adapter initialization complete
+2026-06-05 21:17:52.691Z [Info] [Bluetooth] Starting scan for 8s
+2026-06-05 21:17:52.691Z [Debug] [BluetoothTerminal] bluetoothctl <= scan on
+2026-06-05 21:18:01.105Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-05 21:18:01.509Z [Debug] [BluetoothTerminal] bluetoothctl <= scan off
+2026-06-05 21:18:01.932Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:18:01.935Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-05 21:18:02.344Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:18:02.346Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-05 21:18:02.752Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:18:02.754Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-05 21:18:03.156Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:18:03.159Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:18:03.161Z [Info] [Bluetooth] Scan completed with 1 cached devices
+2026-06-05 21:18:07.844Z [Info] [Bluetooth] Pairing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:18:07.844Z [Debug] [BluetoothTerminal] bluetoothctl <= pair AC:FD:93:5E:38:41
+2026-06-05 21:18:34.878Z [Info] [Bluetooth] Disconnecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:18:34.878Z [Debug] [BluetoothTerminal] bluetoothctl <= disconnect AC:FD:93:5E:38:41
+2026-06-05 21:19:04.466Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:19:04.466Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 21:19:13.558Z [Info] [Bluetooth] Trusting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:19:13.559Z [Debug] [BluetoothTerminal] bluetoothctl <= trust AC:FD:93:5E:38:41
+2026-06-05 21:19:17.128Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:19:17.128Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 21:19:39.637Z [Info] [Steam] Launching Steam Link Flatpak
+2026-06-05 21:19:39.640Z [Error] [Steam] Steam Link Flatpak launch failed: An error occurred trying to start process 'flatpak' with working directory '/home/steamlinkclient/SteamLinkSystem'. No such file or directory
+2026-06-05 21:19:53.089Z [Info] [Program] Ctrl+C requested; exiting cleanly
+2026-06-05 21:19:53.094Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-05 21:20:16.907Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 21:20:16.926Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 21:20:16.934Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 21:20:16.934Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 21:20:16.934Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 21:20:16.936Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 21:20:16.935Z [Warning] [Controllers] No permission to read controller device /dev/input/event12: Access to the path '/dev/input/event12' is denied.
+2026-06-05 21:20:16.936Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 21:20:16.934Z [Warning] [Controllers] No permission to read controller device /dev/input/event11: Access to the path '/dev/input/event11' is denied.
+2026-06-05 21:20:16.936Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 21:20:16.935Z [Warning] [Controllers] No permission to read controller device /dev/input/event13: Access to the path '/dev/input/event13' is denied.
+2026-06-05 21:20:16.937Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 21:20:16.938Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 21:20:16.938Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 21:20:16.939Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 21:20:16.939Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 21:20:20.029Z [Info] [BluetoothTerminal] Starting persistent bluetoothctl process
+2026-06-05 21:20:20.034Z [Info] [Bluetooth] Initializing adapter state
+2026-06-05 21:20:20.040Z [Debug] [BluetoothTerminal] bluetoothctl <= power on
+2026-06-05 21:20:20.464Z [Debug] [BluetoothTerminal] bluetoothctl <= agent on
+2026-06-05 21:20:20.864Z [Debug] [BluetoothTerminal] bluetoothctl <= default-agent
+2026-06-05 21:20:21.264Z [Debug] [BluetoothTerminal] bluetoothctl <= discoverable on
+2026-06-05 21:20:21.728Z [Debug] [BluetoothTerminal] bluetoothctl <= pairable on
+2026-06-05 21:20:22.132Z [Info] [Bluetooth] Bluetooth adapter initialization complete
+2026-06-05 21:20:23.679Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-05 21:20:24.101Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:20:24.105Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-05 21:20:24.506Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:20:24.508Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-05 21:20:24.908Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:20:24.910Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-05 21:20:25.310Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:20:25.313Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 21:20:31.287Z [Info] [Bluetooth] Disconnecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:20:31.288Z [Debug] [BluetoothTerminal] bluetoothctl <= disconnect AC:FD:93:5E:38:41
+2026-06-05 21:20:37.654Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:20:37.654Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 21:20:47.967Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:20:47.967Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 21:21:06.542Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:21:06.542Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 21:21:12.055Z [Info] [Bluetooth] Removing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 21:21:12.056Z [Debug] [BluetoothTerminal] bluetoothctl <= remove AC:FD:93:5E:38:41
+2026-06-05 21:21:16.638Z [Info] [Program] SteamLinkSystem stopped
+2026-06-05 21:21:16.654Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-05 23:24:08.603Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:24:08.621Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:24:08.627Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:24:08.627Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:24:08.627Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:24:08.627Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:24:08.628Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:24:08.629Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:24:08.628Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:24:08.629Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:24:08.629Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:24:08.628Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:24:08.629Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:24:10.906Z [Info] [Program] SteamLinkSystem stopped
+2026-06-05 23:24:10.911Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-05 23:28:24.245Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:28:24.264Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:28:24.271Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:28:24.271Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:28:24.271Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:28:24.271Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:28:24.273Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:28:24.273Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:28:24.274Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:28:24.274Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:28:24.274Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:28:24.274Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:28:24.273Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:28:37.524Z [Info] [BluetoothTerminal] Starting persistent bluetoothctl process
+2026-06-05 23:28:37.529Z [Info] [Bluetooth] Initializing adapter state
+2026-06-05 23:28:37.532Z [Debug] [BluetoothTerminal] bluetoothctl <= power on
+2026-06-05 23:28:37.953Z [Debug] [BluetoothTerminal] bluetoothctl <= agent on
+2026-06-05 23:28:38.360Z [Debug] [BluetoothTerminal] bluetoothctl <= default-agent
+2026-06-05 23:28:38.761Z [Debug] [BluetoothTerminal] bluetoothctl <= discoverable on
+2026-06-05 23:28:39.220Z [Debug] [BluetoothTerminal] bluetoothctl <= pairable on
+2026-06-05 23:28:39.628Z [Info] [Bluetooth] Bluetooth adapter initialization complete
+2026-06-05 23:28:44.881Z [Info] [Bluetooth] Starting scan for 8s
+2026-06-05 23:28:44.881Z [Debug] [BluetoothTerminal] bluetoothctl <= scan on
+2026-06-05 23:28:53.292Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-05 23:28:53.697Z [Debug] [BluetoothTerminal] bluetoothctl <= scan off
+2026-06-05 23:28:54.126Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:28:54.130Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-05 23:28:54.532Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:28:54.534Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-05 23:28:54.936Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:28:54.938Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-05 23:28:55.338Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:28:55.342Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:28:55.344Z [Info] [Bluetooth] Scan completed with 1 cached devices
+2026-06-05 23:29:00.165Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 23:29:00.165Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 23:29:19.258Z [Info] [Bluetooth] Pairing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 23:29:19.259Z [Debug] [BluetoothTerminal] bluetoothctl <= pair AC:FD:93:5E:38:41
+2026-06-05 23:29:23.151Z [Info] [Bluetooth] Removing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 23:29:23.151Z [Debug] [BluetoothTerminal] bluetoothctl <= remove AC:FD:93:5E:38:41
+2026-06-05 23:29:55.039Z [Info] [Power] Reboot requested
+2026-06-05 23:34:26.533Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:34:26.579Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:34:26.584Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:34:26.584Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:34:26.584Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:34:26.584Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:34:26.585Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:34:26.585Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:34:26.585Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:34:26.585Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:34:26.586Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:34:26.586Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:34:26.586Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:35:16.595Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:35:16.633Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:35:16.640Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:35:16.640Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:35:16.640Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:35:16.640Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:35:16.641Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:35:16.641Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:35:16.641Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:35:16.641Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:35:16.642Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:35:16.641Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:35:16.641Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:47:17.044Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:47:17.087Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:47:17.094Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:47:17.094Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:47:17.095Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:47:17.095Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:47:17.095Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:47:17.095Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:47:17.095Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:47:17.095Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:47:17.095Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:47:17.096Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:47:17.096Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:47:48.036Z [Info] [Program] SteamLinkSystem starting
+2026-06-05 23:47:48.054Z [Info] [Controllers] Controller navigation started with 0 input device readers
+2026-06-05 23:47:48.059Z [Warning] [Controllers] No permission to read controller device /dev/input/event10: Access to the path '/dev/input/event10' is denied.
+2026-06-05 23:47:48.059Z [Warning] [Controllers] No permission to read controller device /dev/input/event0: Access to the path '/dev/input/event0' is denied.
+2026-06-05 23:47:48.059Z [Warning] [Controllers] No permission to read controller device /dev/input/event2: Access to the path '/dev/input/event2' is denied.
+2026-06-05 23:47:48.059Z [Warning] [Controllers] No permission to read controller device /dev/input/event1: Access to the path '/dev/input/event1' is denied.
+2026-06-05 23:47:48.060Z [Warning] [Controllers] No permission to read controller device /dev/input/event5: Access to the path '/dev/input/event5' is denied.
+2026-06-05 23:47:48.060Z [Warning] [Controllers] No permission to read controller device /dev/input/event6: Access to the path '/dev/input/event6' is denied.
+2026-06-05 23:47:48.060Z [Warning] [Controllers] No permission to read controller device /dev/input/event7: Access to the path '/dev/input/event7' is denied.
+2026-06-05 23:47:48.060Z [Warning] [Controllers] No permission to read controller device /dev/input/event8: Access to the path '/dev/input/event8' is denied.
+2026-06-05 23:47:48.060Z [Warning] [Controllers] No permission to read controller device /dev/input/event9: Access to the path '/dev/input/event9' is denied.
+2026-06-05 23:47:48.060Z [Warning] [Controllers] No permission to read controller device /dev/input/event3: Access to the path '/dev/input/event3' is denied.
+2026-06-05 23:47:48.060Z [Warning] [Controllers] No permission to read controller device /dev/input/event4: Access to the path '/dev/input/event4' is denied.
+2026-06-05 23:47:58.877Z [Info] [BluetoothTerminal] Starting persistent bluetoothctl process
+2026-06-05 23:47:58.906Z [Info] [Bluetooth] Initializing adapter state
+2026-06-05 23:47:58.909Z [Debug] [BluetoothTerminal] bluetoothctl <= power on
+2026-06-05 23:47:59.372Z [Debug] [BluetoothTerminal] bluetoothctl <= agent on
+2026-06-05 23:47:59.773Z [Debug] [BluetoothTerminal] bluetoothctl <= default-agent
+2026-06-05 23:48:00.175Z [Debug] [BluetoothTerminal] bluetoothctl <= discoverable on
+2026-06-05 23:48:00.633Z [Debug] [BluetoothTerminal] bluetoothctl <= pairable on
+2026-06-05 23:48:01.031Z [Info] [Bluetooth] Bluetooth adapter initialization complete
+2026-06-05 23:48:05.166Z [Info] [Bluetooth] Starting scan for 8s
+2026-06-05 23:48:05.167Z [Debug] [BluetoothTerminal] bluetoothctl <= scan on
+2026-06-05 23:48:13.580Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-05 23:48:13.985Z [Debug] [BluetoothTerminal] bluetoothctl <= scan off
+2026-06-05 23:48:14.417Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:48:14.420Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-05 23:48:14.825Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:48:14.827Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-05 23:48:15.226Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:48:15.228Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-05 23:48:15.634Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:48:15.637Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:48:15.639Z [Info] [Bluetooth] Scan completed with 1 cached devices
+2026-06-05 23:48:20.140Z [Info] [Bluetooth] Pairing Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 23:48:20.141Z [Debug] [BluetoothTerminal] bluetoothctl <= pair AC:FD:93:5E:38:41
+2026-06-05 23:48:25.999Z [Debug] [BluetoothTerminal] bluetoothctl <= info AC:FD:93:5E:38:41
+2026-06-05 23:48:26.595Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:48:39.608Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-05 23:48:39.608Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-05 23:48:52.718Z [Debug] [BluetoothTerminal] bluetoothctl <= info AC:FD:93:5E:38:41
+2026-06-05 23:48:53.118Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:49:19.084Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-05 23:49:19.484Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:49:19.484Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-05 23:49:19.886Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:49:19.886Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-05 23:49:20.289Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:49:20.290Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-05 23:49:20.693Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:49:20.694Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-05 23:50:13.776Z [Info] [Program] SteamLinkSystem stopped
+2026-06-05 23:50:13.786Z [Info] [BluetoothTerminal] Bluetooth terminal disposed

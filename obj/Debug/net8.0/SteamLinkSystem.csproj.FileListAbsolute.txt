@@ -16,3 +16,4 @@
 /home/steamlinkclient/SteamLinkSystem/obj/Debug/net8.0/SteamLinkSystem.pdb
 /home/steamlinkclient/SteamLinkSystem/obj/Debug/net8.0/SteamLinkSystem.genruntimeconfig.cache
 /home/steamlinkclient/SteamLinkSystem/obj/Debug/net8.0/ref/SteamLinkSystem.dll
+/home/steamlinkclient/SteamLinkSystem/obj/Debug/net8.0/SteamLinkSystem.sourcelink.json
