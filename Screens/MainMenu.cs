@@ -27,14 +27,14 @@ public sealed class MainMenu
         while (true)
         {
             MenuStyles.Header("Main Menu", "embedded Linux gaming shell");
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Main Menu").AddChoices("Bluetooth", "Steam", "Controllers", "Network", "System", "Settings", "Exit"));
+            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Main Menu").AddChoices("Bluetooth", "Steam Link", "Controllers", "Network", "System", "Settings", "Exit"));
 
             switch (selected)
             {
                 case "Bluetooth":
                     await _bluetoothMenu.ShowAsync().ConfigureAwait(false);
                     break;
-                case "Steam":
+                case "Steam Link":
                     await ShowSteamAsync().ConfigureAwait(false);
                     break;
                 case "Controllers":
@@ -59,15 +59,13 @@ public sealed class MainMenu
     {
         while (true)
         {
-            MenuStyles.Header("Steam", "launcher foundation");
-            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Steam").AddChoices("Launch Steam", "Launch Big Picture", "Back"));
+            MenuStyles.Header("Steam Link", "Flatpak launcher");
+            var selected = AnsiConsole.Prompt(MenuStyles.Prompt("Steam Link").AddChoices("Launch Steam Link", "Back"));
             if (selected == "Back")
                 return;
 
-            var result = selected == "Launch Steam"
-                ? await _steamService.LaunchSteamAsync().ConfigureAwait(false)
-                : await _steamService.LaunchBigPictureAsync().ConfigureAwait(false);
-            ShowCommandResult(result.CombinedOutput, result.Success ? "Steam" : "Steam Error");
+            var result = await _steamService.LaunchSteamLinkAsync().ConfigureAwait(false);
+            ShowCommandResult(result.CombinedOutput, result.Success ? "Steam Link" : "Steam Link Error");
         }
     }
 
