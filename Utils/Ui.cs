@@ -10,7 +10,7 @@ public static class Ui
         AnsiConsole.MarkupLine($"\n[dim]{message}[/]");
         while (true)
         {
-            if (controller.TryReadNavigation(out var action) && action is ControllerNavigationAction.Select or ControllerNavigationAction.Back)
+            if (controller.TryReadNavigation(out var action) && action is NavigationAction.Select or NavigationAction.Back)
                 return;
 
             try
