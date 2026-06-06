@@ -9,4 +9,7 @@ public sealed class NetworkService
 
     public Task<ShellResult> TestConnectivityAsync(CancellationToken cancellationToken = default) =>
         ShellRunner.RunAsync("ping", "-c 1 -W 2 1.1.1.1", TimeSpan.FromSeconds(4), cancellationToken);
+
+    public Task<ShellResult> TestConnectivityWithPc(CancellationToken cancellationToken = default) =>
+        ShellRunner.RunAsync("ping", $"-c 1 -W 2 {"192.168.1.3"}", TimeSpan.FromSeconds(4), cancellationToken);
 }

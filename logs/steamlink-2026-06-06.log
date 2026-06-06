@@ -1,0 +1,1012 @@
+2026-06-06 00:05:00.290Z [Info] [Program] SteamLinkSystem starting
+2026-06-06 00:05:00.325Z [Info] [Controllers] Detected controller candidate: event0 (/dev/input/event0)
+2026-06-06 00:05:00.325Z [Info] [Controllers] Detected controller candidate: event1 (/dev/input/event1)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event10 (/dev/input/event10)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event2 (/dev/input/event2)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event3 (/dev/input/event3)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event4 (/dev/input/event4)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event5 (/dev/input/event5)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event6 (/dev/input/event6)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event7 (/dev/input/event7)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event8 (/dev/input/event8)
+2026-06-06 00:05:00.326Z [Info] [Controllers] Detected controller candidate: event9 (/dev/input/event9)
+2026-06-06 00:05:00.338Z [Warning] [Controllers] No permission to read /dev/input/event1. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event1' is denied.
+2026-06-06 00:05:00.338Z [Warning] [Controllers] No permission to read /dev/input/event10. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event10' is denied.
+2026-06-06 00:05:00.339Z [Info] [Controllers] Controller disconnected: event1 at /dev/input/event1
+2026-06-06 00:05:00.339Z [Warning] [Controllers] No permission to read /dev/input/event0. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event0' is denied.
+2026-06-06 00:05:00.339Z [Warning] [Controllers] No permission to read /dev/input/event2. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event2' is denied.
+2026-06-06 00:05:00.340Z [Info] [Controllers] Controller disconnected: event2 at /dev/input/event2
+2026-06-06 00:05:00.340Z [Info] [Controllers] Controller manager started with 11 active device reader(s)
+2026-06-06 00:05:00.340Z [Info] [Controllers] Controller service initialized
+2026-06-06 00:05:00.341Z [Warning] [Controllers] No permission to read /dev/input/event3. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event3' is denied.
+2026-06-06 00:05:00.341Z [Info] [Controllers] Controller disconnected: event3 at /dev/input/event3
+2026-06-06 00:05:00.342Z [Warning] [Controllers] No permission to read /dev/input/event4. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event4' is denied.
+2026-06-06 00:05:00.342Z [Info] [Controllers] Controller disconnected: event4 at /dev/input/event4
+2026-06-06 00:05:00.342Z [Warning] [Controllers] No permission to read /dev/input/event5. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event5' is denied.
+2026-06-06 00:05:00.342Z [Info] [Controllers] Controller disconnected: event5 at /dev/input/event5
+2026-06-06 00:05:00.343Z [Warning] [Controllers] No permission to read /dev/input/event6. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event6' is denied.
+2026-06-06 00:05:00.339Z [Info] [Controllers] Controller disconnected: event10 at /dev/input/event10
+2026-06-06 00:05:00.343Z [Warning] [Controllers] No permission to read /dev/input/event7. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event7' is denied.
+2026-06-06 00:05:00.343Z [Info] [Controllers] Controller disconnected: event7 at /dev/input/event7
+2026-06-06 00:05:00.343Z [Warning] [Controllers] No permission to read /dev/input/event8. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event8' is denied.
+2026-06-06 00:05:00.344Z [Info] [Controllers] Controller disconnected: event8 at /dev/input/event8
+2026-06-06 00:05:00.344Z [Warning] [Controllers] No permission to read /dev/input/event9. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event9' is denied.
+2026-06-06 00:05:00.344Z [Info] [Controllers] Controller disconnected: event6 at /dev/input/event6
+2026-06-06 00:05:00.346Z [Info] [Controllers] Controller disconnected: event9 at /dev/input/event9
+2026-06-06 00:05:00.344Z [Info] [Controllers] Controller disconnected: event0 at /dev/input/event0
+2026-06-06 00:05:06.617Z [Info] [BluetoothTerminal] Starting persistent bluetoothctl process
+2026-06-06 00:05:06.622Z [Info] [Bluetooth] Initializing adapter state
+2026-06-06 00:05:06.625Z [Debug] [BluetoothTerminal] bluetoothctl <= power on
+2026-06-06 00:05:07.045Z [Debug] [BluetoothTerminal] bluetoothctl <= agent on
+2026-06-06 00:05:07.452Z [Debug] [BluetoothTerminal] bluetoothctl <= default-agent
+2026-06-06 00:05:07.857Z [Debug] [BluetoothTerminal] bluetoothctl <= discoverable on
+2026-06-06 00:05:08.325Z [Debug] [BluetoothTerminal] bluetoothctl <= pairable on
+2026-06-06 00:05:08.728Z [Info] [Bluetooth] Bluetooth adapter initialization complete
+2026-06-06 00:05:15.236Z [Info] [Bluetooth] Starting scan for 8s
+2026-06-06 00:05:15.236Z [Debug] [BluetoothTerminal] bluetoothctl <= scan on
+2026-06-06 00:05:23.644Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-06 00:05:24.048Z [Debug] [BluetoothTerminal] bluetoothctl <= scan off
+2026-06-06 00:05:24.478Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:05:24.482Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-06 00:05:24.881Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:05:24.883Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-06 00:05:25.285Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:05:25.287Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-06 00:05:25.691Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:05:25.694Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:05:25.696Z [Info] [Bluetooth] Scan completed with 1 cached devices
+2026-06-06 00:05:30.737Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-06 00:05:30.737Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-06 00:05:35.350Z [Info] [Controllers] Detected controller candidate: event11 (/dev/input/event11)
+2026-06-06 00:05:35.350Z [Info] [Controllers] Detected controller candidate: event12 (/dev/input/event12)
+2026-06-06 00:05:35.350Z [Info] [Controllers] Detected controller candidate: event13 (/dev/input/event13)
+2026-06-06 00:05:35.351Z [Warning] [Controllers] No permission to read /dev/input/event12. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event12' is denied.
+2026-06-06 00:05:35.350Z [Info] [Controllers] Controller connected: event11 at /dev/input/event11 via evdev
+2026-06-06 00:05:35.351Z [Warning] [Controllers] No permission to read /dev/input/event13. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event13' is denied.
+2026-06-06 00:05:35.351Z [Info] [Controllers] Controller disconnected: event12 at /dev/input/event12
+2026-06-06 00:05:35.351Z [Info] [Controllers] Controller disconnected: event13 at /dev/input/event13
+2026-06-06 00:05:35.458Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:05:35.462Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:05:35.626Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:05:35.626Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:05:36.387Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:36.388Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:36.839Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:36.840Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:37.144Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:37.145Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:37.427Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:37.427Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:37.639Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:37.640Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:37.819Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:37.819Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:38.087Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:38.087Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:38.499Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:38.499Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:38.983Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:38.983Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:39.199Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:39.199Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:39.667Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:39.667Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:40.023Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:40.023Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:42.979Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:42.979Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:46.211Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:46.211Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:46.491Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:05:46.491Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:05:46.987Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:46.987Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:47.531Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:05:47.531Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:05:48.195Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:48.195Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:48.431Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:48.431Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:48.651Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:48.651Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:49.291Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:49.291Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:49.511Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:49.511Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:49.975Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:49.975Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:50.203Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:50.203Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:50.475Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:50.475Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:50.711Z [Debug] [Controllers] Mapped axis code 16 value -1 to Left
+2026-06-06 00:05:50.711Z [Debug] [Controllers] Navigation event Left from event11 (/dev/input/event11)
+2026-06-06 00:05:50.959Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:05:50.959Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:05:51.379Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:05:51.379Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:05:51.679Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:51.679Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:52.011Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:52.011Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:52.247Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:52.247Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:52.643Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:52.643Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:52.807Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:05:52.807Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:05:53.239Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:05:53.239Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:05:53.495Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:53.495Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:53.815Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:53.815Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:53.987Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:53.987Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:54.307Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:05:54.307Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:05:54.675Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:54.675Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:54.875Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:54.875Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:55.367Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:05:55.367Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:05:57.771Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:05:57.772Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:05:58.335Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:58.335Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:58.503Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:05:58.503Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:05:58.719Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:05:58.719Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:03.607Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:03.607Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:03.879Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:03.879Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:04.063Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:04.063Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:04.219Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:04.411Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:04.411Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:04.695Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:04.695Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:04.855Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:05.035Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:05.035Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:05.199Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:05.199Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:05.471Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:05.471Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:05.755Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:05.755Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:06.055Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:06.055Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:06.419Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:06.419Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:06.879Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:06.879Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:07.103Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:07.103Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:07.435Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:07.435Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:07.663Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:07.663Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:07.931Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:07.931Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:13.507Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:13.507Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:13.799Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:13.799Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:13.999Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:13.999Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:14.263Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:14.263Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:14.435Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:14.435Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:14.667Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:14.667Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:15.399Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:15.399Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:15.627Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:15.627Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:15.903Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:15.903Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:16.099Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:16.099Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:16.363Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:16.363Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:16.611Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:16.611Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:17.151Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:17.151Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:18.159Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:18.159Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:18.711Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:18.711Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:23.439Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:23.439Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:23.747Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:23.747Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:24.507Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:24.507Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:25.023Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:25.023Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:25.239Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:25.239Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:25.547Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:25.547Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:25.983Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:06:25.983Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:06:26.295Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:06:26.295Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:06:26.575Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:26.575Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:26.779Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:26.779Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:26.995Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:26.995Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:27.627Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:06:27.628Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:06:27.995Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:06:27.995Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:06:28.407Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:06:28.407Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:06:28.412Z [Info] [Program] SteamLinkSystem stopped
+2026-06-06 00:06:28.471Z [Info] [Controllers] Controller disconnected: event11 at /dev/input/event11
+2026-06-06 00:06:28.486Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-06 00:13:56.908Z [Info] [Program] SteamLinkSystem starting
+2026-06-06 00:13:56.984Z [Info] [Controllers] Detected controller candidate: event0 (/dev/input/event0)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event1 (/dev/input/event1)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event10 (/dev/input/event10)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event2 (/dev/input/event2)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event3 (/dev/input/event3)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event4 (/dev/input/event4)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event5 (/dev/input/event5)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event6 (/dev/input/event6)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event7 (/dev/input/event7)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event8 (/dev/input/event8)
+2026-06-06 00:13:56.985Z [Info] [Controllers] Detected controller candidate: event9 (/dev/input/event9)
+2026-06-06 00:13:56.994Z [Info] [Controllers] Controller manager started with 11 active device reader(s)
+2026-06-06 00:13:56.994Z [Info] [Controllers] Controller service initialized
+2026-06-06 00:13:56.995Z [Warning] [Controllers] No permission to read /dev/input/event0. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event0' is denied.
+2026-06-06 00:13:56.996Z [Warning] [Controllers] No permission to read /dev/input/event2. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event2' is denied.
+2026-06-06 00:13:56.995Z [Warning] [Controllers] No permission to read /dev/input/event10. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event10' is denied.
+2026-06-06 00:13:56.996Z [Info] [Controllers] Controller disconnected: event10 at /dev/input/event10
+2026-06-06 00:13:56.996Z [Warning] [Controllers] No permission to read /dev/input/event1. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event1' is denied.
+2026-06-06 00:13:56.996Z [Info] [Controllers] Controller disconnected: event1 at /dev/input/event1
+2026-06-06 00:13:56.996Z [Info] [Controllers] Controller disconnected: event0 at /dev/input/event0
+2026-06-06 00:13:56.997Z [Info] [Controllers] Controller disconnected: event2 at /dev/input/event2
+2026-06-06 00:13:56.997Z [Warning] [Controllers] No permission to read /dev/input/event4. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event4' is denied.
+2026-06-06 00:13:56.997Z [Warning] [Controllers] No permission to read /dev/input/event3. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event3' is denied.
+2026-06-06 00:13:56.997Z [Info] [Controllers] Controller disconnected: event3 at /dev/input/event3
+2026-06-06 00:13:56.997Z [Warning] [Controllers] No permission to read /dev/input/event6. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event6' is denied.
+2026-06-06 00:13:56.997Z [Warning] [Controllers] No permission to read /dev/input/event7. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event7' is denied.
+2026-06-06 00:13:56.997Z [Info] [Controllers] Controller disconnected: event7 at /dev/input/event7
+2026-06-06 00:13:56.998Z [Warning] [Controllers] No permission to read /dev/input/event8. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event8' is denied.
+2026-06-06 00:13:56.998Z [Info] [Controllers] Controller disconnected: event8 at /dev/input/event8
+2026-06-06 00:13:56.998Z [Warning] [Controllers] No permission to read /dev/input/event9. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event9' is denied.
+2026-06-06 00:13:56.998Z [Info] [Controllers] Controller disconnected: event9 at /dev/input/event9
+2026-06-06 00:13:56.997Z [Info] [Controllers] Controller disconnected: event4 at /dev/input/event4
+2026-06-06 00:13:56.997Z [Info] [Controllers] Controller disconnected: event6 at /dev/input/event6
+2026-06-06 00:13:57.001Z [Warning] [Controllers] No permission to read /dev/input/event5. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event5' is denied.
+2026-06-06 00:13:57.001Z [Info] [Controllers] Controller disconnected: event5 at /dev/input/event5
+2026-06-06 00:14:41.423Z [Info] [Program] SteamLinkSystem starting
+2026-06-06 00:14:41.471Z [Info] [Controllers] Detected controller candidate: event0 (/dev/input/event0)
+2026-06-06 00:14:41.471Z [Info] [Controllers] Detected controller candidate: event1 (/dev/input/event1)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event10 (/dev/input/event10)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event2 (/dev/input/event2)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event3 (/dev/input/event3)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event4 (/dev/input/event4)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event5 (/dev/input/event5)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event6 (/dev/input/event6)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event7 (/dev/input/event7)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event8 (/dev/input/event8)
+2026-06-06 00:14:41.472Z [Info] [Controllers] Detected controller candidate: event9 (/dev/input/event9)
+2026-06-06 00:14:41.477Z [Warning] [Controllers] No permission to read /dev/input/event0. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event0' is denied.
+2026-06-06 00:14:41.477Z [Warning] [Controllers] No permission to read /dev/input/event10. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event10' is denied.
+2026-06-06 00:14:41.477Z [Warning] [Controllers] No permission to read /dev/input/event1. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event1' is denied.
+2026-06-06 00:14:41.477Z [Warning] [Controllers] No permission to read /dev/input/event2. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event2' is denied.
+2026-06-06 00:14:41.477Z [Info] [Controllers] Controller disconnected: event10 at /dev/input/event10
+2026-06-06 00:14:41.478Z [Info] [Controllers] Controller disconnected: event0 at /dev/input/event0
+2026-06-06 00:14:41.478Z [Info] [Controllers] Controller disconnected: event2 at /dev/input/event2
+2026-06-06 00:14:41.477Z [Info] [Controllers] Controller disconnected: event1 at /dev/input/event1
+2026-06-06 00:14:41.478Z [Warning] [Controllers] No permission to read /dev/input/event3. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event3' is denied.
+2026-06-06 00:14:41.478Z [Warning] [Controllers] No permission to read /dev/input/event4. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event4' is denied.
+2026-06-06 00:14:41.479Z [Info] [Controllers] Controller disconnected: event4 at /dev/input/event4
+2026-06-06 00:14:41.479Z [Warning] [Controllers] No permission to read /dev/input/event6. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event6' is denied.
+2026-06-06 00:14:41.479Z [Info] [Controllers] Controller disconnected: event6 at /dev/input/event6
+2026-06-06 00:14:41.479Z [Warning] [Controllers] No permission to read /dev/input/event7. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event7' is denied.
+2026-06-06 00:14:41.479Z [Info] [Controllers] Controller disconnected: event7 at /dev/input/event7
+2026-06-06 00:14:41.479Z [Warning] [Controllers] No permission to read /dev/input/event8. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event8' is denied.
+2026-06-06 00:14:41.480Z [Info] [Controllers] Controller disconnected: event8 at /dev/input/event8
+2026-06-06 00:14:41.480Z [Warning] [Controllers] No permission to read /dev/input/event9. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event9' is denied.
+2026-06-06 00:14:41.480Z [Info] [Controllers] Controller disconnected: event9 at /dev/input/event9
+2026-06-06 00:14:41.480Z [Info] [Controllers] Controller manager started with 9 active device reader(s)
+2026-06-06 00:14:41.481Z [Info] [Controllers] Controller service initialized
+2026-06-06 00:14:41.479Z [Info] [Controllers] Controller disconnected: event3 at /dev/input/event3
+2026-06-06 00:14:41.479Z [Warning] [Controllers] No permission to read /dev/input/event5. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event5' is denied.
+2026-06-06 00:14:41.482Z [Info] [Controllers] Controller disconnected: event5 at /dev/input/event5
+2026-06-06 00:14:44.147Z [Info] [BluetoothTerminal] Starting persistent bluetoothctl process
+2026-06-06 00:14:44.178Z [Info] [Bluetooth] Initializing adapter state
+2026-06-06 00:14:44.180Z [Debug] [BluetoothTerminal] bluetoothctl <= power on
+2026-06-06 00:14:44.771Z [Debug] [BluetoothTerminal] bluetoothctl <= agent on
+2026-06-06 00:14:45.171Z [Debug] [BluetoothTerminal] bluetoothctl <= default-agent
+2026-06-06 00:14:45.574Z [Debug] [BluetoothTerminal] bluetoothctl <= discoverable on
+2026-06-06 00:14:46.093Z [Debug] [BluetoothTerminal] bluetoothctl <= pairable on
+2026-06-06 00:14:46.492Z [Info] [Bluetooth] Bluetooth adapter initialization complete
+2026-06-06 00:14:49.752Z [Debug] [BluetoothTerminal] bluetoothctl <= devices
+2026-06-06 00:14:50.174Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:14:50.178Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Paired
+2026-06-06 00:14:50.577Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:14:50.579Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Trusted
+2026-06-06 00:14:50.980Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:14:50.982Z [Debug] [BluetoothTerminal] bluetoothctl <= devices Connected
+2026-06-06 00:14:51.382Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:14:51.386Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:14:54.811Z [Info] [Bluetooth] Connecting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-06 00:14:54.812Z [Debug] [BluetoothTerminal] bluetoothctl <= connect AC:FD:93:5E:38:41
+2026-06-06 00:14:56.482Z [Info] [Controllers] Detected controller candidate: event11 (/dev/input/event11)
+2026-06-06 00:14:56.482Z [Info] [Controllers] Detected controller candidate: event12 (/dev/input/event12)
+2026-06-06 00:14:56.482Z [Info] [Controllers] Detected controller candidate: event13 (/dev/input/event13)
+2026-06-06 00:14:56.483Z [Warning] [Controllers] No permission to read /dev/input/event13. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event13' is denied.
+2026-06-06 00:14:56.483Z [Info] [Controllers] Controller disconnected: event13 at /dev/input/event13
+2026-06-06 00:14:56.483Z [Warning] [Controllers] No permission to read /dev/input/event11. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event11' is denied.
+2026-06-06 00:14:56.483Z [Warning] [Controllers] No permission to read /dev/input/event12. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event12' is denied.
+2026-06-06 00:14:56.483Z [Info] [Controllers] Controller disconnected: event11 at /dev/input/event11
+2026-06-06 00:14:56.483Z [Info] [Controllers] Controller disconnected: event12 at /dev/input/event12
+2026-06-06 00:14:57.000Z [Info] [Controllers] Detected controller candidate: event11 (/dev/input/event11)
+2026-06-06 00:14:57.000Z [Info] [Controllers] Detected controller candidate: event12 (/dev/input/event12)
+2026-06-06 00:14:57.000Z [Info] [Controllers] Detected controller candidate: event13 (/dev/input/event13)
+2026-06-06 00:14:57.000Z [Info] [Controllers] Controller connected: event11 at /dev/input/event11 via evdev
+2026-06-06 00:14:57.000Z [Warning] [Controllers] No permission to read /dev/input/event13. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event13' is denied.
+2026-06-06 00:14:57.000Z [Info] [Controllers] Controller disconnected: event13 at /dev/input/event13
+2026-06-06 00:14:57.000Z [Warning] [Controllers] No permission to read /dev/input/event12. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event12' is denied.
+2026-06-06 00:14:57.001Z [Info] [Controllers] Controller disconnected: event12 at /dev/input/event12
+2026-06-06 00:14:58.109Z [Info] [Bluetooth] Trusting Wireless Controller (AC:FD:93:5E:38:41)
+2026-06-06 00:14:58.110Z [Debug] [BluetoothTerminal] bluetoothctl <= trust AC:FD:93:5E:38:41
+2026-06-06 00:15:02.397Z [Debug] [BluetoothTerminal] bluetoothctl <= info AC:FD:93:5E:38:41
+2026-06-06 00:15:02.801Z [Debug] [BluetoothSession] Bluetooth cache contains 1 devices
+2026-06-06 00:15:05.704Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:15:05.707Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:15:05.859Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:05.859Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:06.179Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:06.180Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:06.391Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:06.391Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:06.651Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:06.651Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:07.054Z [Debug] [Controllers] Mapped axis code 16 value -1 to Left
+2026-06-06 00:15:07.054Z [Debug] [Controllers] Navigation event Left from event11 (/dev/input/event11)
+2026-06-06 00:15:07.443Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:07.443Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:07.594Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:15:07.594Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:15:07.976Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:15:07.976Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:15:08.263Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:08.263Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:08.555Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:08.555Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:09.951Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:09.951Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:10.227Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:10.227Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:10.435Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:10.435Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:10.631Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:10.631Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:10.883Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:10.883Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:11.099Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:11.099Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:11.307Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:15:11.307Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:15:11.499Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:15:11.499Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:15:11.735Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:11.735Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:11.951Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:11.951Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:12.103Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:12.303Z [Debug] [Controllers] Mapped axis code 16 value -1 to Left
+2026-06-06 00:15:12.303Z [Debug] [Controllers] Navigation event Left from event11 (/dev/input/event11)
+2026-06-06 00:15:12.527Z [Debug] [Controllers] Mapped axis code 16 value -1 to Left
+2026-06-06 00:15:12.527Z [Debug] [Controllers] Navigation event Left from event11 (/dev/input/event11)
+2026-06-06 00:15:12.739Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:15:12.739Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:15:12.919Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:15:12.919Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:15:13.095Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:13.095Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:13.543Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:13.543Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:13.731Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:13.731Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:14.611Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:14.611Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:14.815Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:14.815Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:15.003Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:15.003Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:15.207Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:15.207Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:15.399Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:15.399Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:15.627Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:15.627Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:15.889Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:15.889Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:16.107Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:16.107Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:16.327Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:16.327Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:16.503Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:16.503Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:16.671Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:16.671Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:16.975Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:16.975Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:17.311Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:17.311Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:17.543Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:17.543Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:17.747Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:17.747Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:17.971Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:17.971Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:18.175Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:18.175Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:18.523Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:18.523Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:18.727Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:18.727Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:19.231Z [Debug] [Controllers] Mapped axis code 16 value 1 to Right
+2026-06-06 00:15:19.231Z [Debug] [Controllers] Navigation event Right from event11 (/dev/input/event11)
+2026-06-06 00:15:19.639Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:19.639Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:19.895Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:19.895Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:20.111Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:20.111Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:20.423Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:20.423Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:20.639Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:20.639Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:20.855Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:20.855Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:21.159Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:21.159Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:21.363Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:21.363Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:21.560Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:15:21.560Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:15:22.303Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:15:22.303Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:15:22.691Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:22.691Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:23.099Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:23.099Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:23.347Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:23.347Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:23.591Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:15:23.591Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:15:23.975Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:15:23.975Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:15:24.004Z [Info] [Steam] Launching Steam Link session
+2026-06-06 00:15:24.021Z [Info] [Steam] Steam Link session started with PID 1926
+2026-06-06 00:15:26.247Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:15:26.247Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:15:26.623Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:15:26.623Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:15:30.152Z [Info] [Steam] Steam Link session ended with code 0
+2026-06-06 00:15:43.635Z [Info] [Steam] Launching Steam Link session
+2026-06-06 00:15:43.636Z [Info] [Steam] Steam Link session started with PID 1994
+2026-06-06 00:15:43.664Z [Info] [Steam] Steam Link session ended with code 1
+2026-06-06 00:17:11.971Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:17:11.971Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:17:14.791Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:14.791Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:15.071Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:17:15.071Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:17:15.535Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:15.535Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:15.727Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:15.727Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:16.423Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:17:16.423Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:17:16.755Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:16.755Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:16.971Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:16.971Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:17.919Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:17:17.919Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:17:18.503Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:18.503Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:18.823Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:17:18.823Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:17:18.991Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:17:18.991Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:17:20.419Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:17:20.419Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:17:20.735Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:20.735Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:20.919Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:20.919Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:21.139Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:17:21.139Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:17:27.487Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:27.487Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:28.159Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:17:28.159Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:17:28.165Z [Info] [Program] SteamLinkSystem stopped
+2026-06-06 00:17:28.203Z [Info] [Controllers] Controller disconnected: event11 at /dev/input/event11
+2026-06-06 00:17:28.239Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-06 00:17:30.408Z [Info] [Program] SteamLinkSystem starting
+2026-06-06 00:17:30.441Z [Info] [Controllers] Detected controller candidate: event0 (/dev/input/event0)
+2026-06-06 00:17:30.441Z [Info] [Controllers] Detected controller candidate: event1 (/dev/input/event1)
+2026-06-06 00:17:30.441Z [Info] [Controllers] Detected controller candidate: event10 (/dev/input/event10)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event11 (/dev/input/event11)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event12 (/dev/input/event12)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event13 (/dev/input/event13)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event2 (/dev/input/event2)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event3 (/dev/input/event3)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event4 (/dev/input/event4)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event5 (/dev/input/event5)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event6 (/dev/input/event6)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event7 (/dev/input/event7)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event8 (/dev/input/event8)
+2026-06-06 00:17:30.442Z [Info] [Controllers] Detected controller candidate: event9 (/dev/input/event9)
+2026-06-06 00:17:30.444Z [Info] [Controllers] Controller connected: event11 at /dev/input/event11 via evdev
+2026-06-06 00:17:30.449Z [Info] [Controllers] Controller manager started with 14 active device reader(s)
+2026-06-06 00:17:30.450Z [Info] [Controllers] Controller service initialized
+2026-06-06 00:17:30.452Z [Warning] [Controllers] No permission to read /dev/input/event10. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event10' is denied.
+2026-06-06 00:17:30.452Z [Warning] [Controllers] No permission to read /dev/input/event0. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event0' is denied.
+2026-06-06 00:17:30.452Z [Warning] [Controllers] No permission to read /dev/input/event1. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event1' is denied.
+2026-06-06 00:17:30.453Z [Info] [Controllers] Controller disconnected: event10 at /dev/input/event10
+2026-06-06 00:17:30.453Z [Info] [Controllers] Controller disconnected: event1 at /dev/input/event1
+2026-06-06 00:17:30.453Z [Info] [Controllers] Controller disconnected: event0 at /dev/input/event0
+2026-06-06 00:17:30.454Z [Warning] [Controllers] No permission to read /dev/input/event12. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event12' is denied.
+2026-06-06 00:17:30.454Z [Info] [Controllers] Controller disconnected: event12 at /dev/input/event12
+2026-06-06 00:17:30.454Z [Warning] [Controllers] No permission to read /dev/input/event2. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event2' is denied.
+2026-06-06 00:17:30.454Z [Info] [Controllers] Controller disconnected: event2 at /dev/input/event2
+2026-06-06 00:17:30.455Z [Warning] [Controllers] No permission to read /dev/input/event3. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event3' is denied.
+2026-06-06 00:17:30.455Z [Warning] [Controllers] No permission to read /dev/input/event4. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event4' is denied.
+2026-06-06 00:17:30.455Z [Warning] [Controllers] No permission to read /dev/input/event13. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event13' is denied.
+2026-06-06 00:17:30.455Z [Info] [Controllers] Controller disconnected: event13 at /dev/input/event13
+2026-06-06 00:17:30.455Z [Info] [Controllers] Controller disconnected: event4 at /dev/input/event4
+2026-06-06 00:17:30.456Z [Warning] [Controllers] No permission to read /dev/input/event5. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event5' is denied.
+2026-06-06 00:17:30.456Z [Info] [Controllers] Controller disconnected: event5 at /dev/input/event5
+2026-06-06 00:17:30.455Z [Info] [Controllers] Controller disconnected: event3 at /dev/input/event3
+2026-06-06 00:17:30.456Z [Warning] [Controllers] No permission to read /dev/input/event7. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event7' is denied.
+2026-06-06 00:17:30.456Z [Info] [Controllers] Controller disconnected: event7 at /dev/input/event7
+2026-06-06 00:17:30.456Z [Warning] [Controllers] No permission to read /dev/input/event6. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event6' is denied.
+2026-06-06 00:17:30.456Z [Info] [Controllers] Controller disconnected: event6 at /dev/input/event6
+2026-06-06 00:17:30.456Z [Warning] [Controllers] No permission to read /dev/input/event9. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event9' is denied.
+2026-06-06 00:17:30.456Z [Warning] [Controllers] No permission to read /dev/input/event8. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event8' is denied.
+2026-06-06 00:17:30.457Z [Info] [Controllers] Controller disconnected: event9 at /dev/input/event9
+2026-06-06 00:17:30.457Z [Info] [Controllers] Controller disconnected: event8 at /dev/input/event8
+2026-06-06 00:17:31.041Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:31.045Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:31.293Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:17:31.293Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:17:31.298Z [Info] [Program] SteamLinkSystem stopped
+2026-06-06 00:17:31.332Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-06 00:17:33.531Z [Info] [Program] SteamLinkSystem starting
+2026-06-06 00:17:33.564Z [Info] [Controllers] Detected controller candidate: event0 (/dev/input/event0)
+2026-06-06 00:17:33.564Z [Info] [Controllers] Detected controller candidate: event1 (/dev/input/event1)
+2026-06-06 00:17:33.564Z [Info] [Controllers] Detected controller candidate: event10 (/dev/input/event10)
+2026-06-06 00:17:33.564Z [Info] [Controllers] Detected controller candidate: event11 (/dev/input/event11)
+2026-06-06 00:17:33.564Z [Info] [Controllers] Detected controller candidate: event12 (/dev/input/event12)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event13 (/dev/input/event13)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event2 (/dev/input/event2)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event3 (/dev/input/event3)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event4 (/dev/input/event4)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event5 (/dev/input/event5)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event6 (/dev/input/event6)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event7 (/dev/input/event7)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event8 (/dev/input/event8)
+2026-06-06 00:17:33.565Z [Info] [Controllers] Detected controller candidate: event9 (/dev/input/event9)
+2026-06-06 00:17:33.567Z [Info] [Controllers] Controller connected: event11 at /dev/input/event11 via evdev
+2026-06-06 00:17:33.573Z [Warning] [Controllers] No permission to read /dev/input/event1. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event1' is denied.
+2026-06-06 00:17:33.573Z [Warning] [Controllers] No permission to read /dev/input/event0. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event0' is denied.
+2026-06-06 00:17:33.573Z [Warning] [Controllers] No permission to read /dev/input/event10. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event10' is denied.
+2026-06-06 00:17:33.573Z [Info] [Controllers] Controller disconnected: event1 at /dev/input/event1
+2026-06-06 00:17:33.573Z [Info] [Controllers] Controller disconnected: event10 at /dev/input/event10
+2026-06-06 00:17:33.573Z [Info] [Controllers] Controller disconnected: event0 at /dev/input/event0
+2026-06-06 00:17:33.574Z [Warning] [Controllers] No permission to read /dev/input/event12. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event12' is denied.
+2026-06-06 00:17:33.574Z [Warning] [Controllers] No permission to read /dev/input/event13. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event13' is denied.
+2026-06-06 00:17:33.574Z [Info] [Controllers] Controller disconnected: event13 at /dev/input/event13
+2026-06-06 00:17:33.574Z [Warning] [Controllers] No permission to read /dev/input/event3. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event3' is denied.
+2026-06-06 00:17:33.574Z [Warning] [Controllers] No permission to read /dev/input/event2. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event2' is denied.
+2026-06-06 00:17:33.574Z [Info] [Controllers] Controller disconnected: event2 at /dev/input/event2
+2026-06-06 00:17:33.574Z [Warning] [Controllers] No permission to read /dev/input/event4. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event4' is denied.
+2026-06-06 00:17:33.574Z [Info] [Controllers] Controller disconnected: event12 at /dev/input/event12
+2026-06-06 00:17:33.574Z [Info] [Controllers] Controller disconnected: event3 at /dev/input/event3
+2026-06-06 00:17:33.575Z [Warning] [Controllers] No permission to read /dev/input/event6. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event6' is denied.
+2026-06-06 00:17:33.575Z [Info] [Controllers] Controller disconnected: event6 at /dev/input/event6
+2026-06-06 00:17:33.576Z [Warning] [Controllers] No permission to read /dev/input/event7. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event7' is denied.
+2026-06-06 00:17:33.576Z [Info] [Controllers] Controller disconnected: event7 at /dev/input/event7
+2026-06-06 00:17:33.576Z [Warning] [Controllers] No permission to read /dev/input/event8. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event8' is denied.
+2026-06-06 00:17:33.576Z [Info] [Controllers] Controller disconnected: event8 at /dev/input/event8
+2026-06-06 00:17:33.576Z [Warning] [Controllers] No permission to read /dev/input/event9. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event9' is denied.
+2026-06-06 00:17:33.576Z [Info] [Controllers] Controller disconnected: event9 at /dev/input/event9
+2026-06-06 00:17:33.574Z [Info] [Controllers] Controller disconnected: event4 at /dev/input/event4
+2026-06-06 00:17:33.577Z [Warning] [Controllers] No permission to read /dev/input/event5. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event5' is denied.
+2026-06-06 00:17:33.577Z [Info] [Controllers] Controller disconnected: event5 at /dev/input/event5
+2026-06-06 00:17:33.577Z [Info] [Controllers] Controller manager started with 14 active device reader(s)
+2026-06-06 00:17:33.577Z [Info] [Controllers] Controller service initialized
+2026-06-06 00:17:34.042Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:34.046Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:34.251Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:34.252Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:34.435Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:34.435Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:34.839Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:17:34.839Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:17:35.551Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:35.551Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:35.943Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:35.943Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:36.187Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:17:36.187Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:17:36.803Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:36.803Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:36.983Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:17:36.983Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:17:37.317Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:17:37.317Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:17:52.439Z [Info] [Program] Ctrl+C requested; exiting cleanly
+2026-06-06 00:17:52.482Z [Info] [BluetoothTerminal] Bluetooth terminal disposed
+2026-06-06 00:18:01.303Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:01.303Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:01.767Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:18:01.767Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:18:02.115Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:02.115Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:02.323Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:18:02.323Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:18:02.743Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:18:02.743Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:18:02.756Z [Info] [Steam] Launching Steam Link session
+2026-06-06 00:18:02.763Z [Info] [Steam] Steam Link session started with PID 2263
+2026-06-06 00:18:03.642Z [Info] [Steam] Steam Link session ended with code 0
+2026-06-06 00:18:06.743Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:06.743Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:12.207Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:18:12.207Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:18:12.535Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:12.535Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:12.923Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:12.923Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:13.351Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:13.351Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:13.739Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:13.739Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:14.859Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:14.859Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:15.071Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:18:15.072Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:18:15.499Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:15.499Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:16.079Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:18:16.079Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:18:16.571Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:18:16.571Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:18:17.027Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:18:17.027Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:20:58.833Z [Info] [Program] SteamLinkSystem starting
+2026-06-06 00:20:58.900Z [Info] [Controllers] Detected controller candidate: event0 (/dev/input/event0)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event1 (/dev/input/event1)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event10 (/dev/input/event10)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event2 (/dev/input/event2)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event3 (/dev/input/event3)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event4 (/dev/input/event4)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event5 (/dev/input/event5)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event6 (/dev/input/event6)
+2026-06-06 00:20:58.901Z [Info] [Controllers] Detected controller candidate: event7 (/dev/input/event7)
+2026-06-06 00:20:58.902Z [Info] [Controllers] Detected controller candidate: event8 (/dev/input/event8)
+2026-06-06 00:20:58.902Z [Info] [Controllers] Detected controller candidate: event9 (/dev/input/event9)
+2026-06-06 00:20:58.909Z [Info] [Controllers] Controller manager started with 11 active device reader(s)
+2026-06-06 00:20:58.909Z [Info] [Controllers] Controller service initialized
+2026-06-06 00:20:58.911Z [Warning] [Controllers] No permission to read /dev/input/event2. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event2' is denied.
+2026-06-06 00:20:58.911Z [Warning] [Controllers] No permission to read /dev/input/event1. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event1' is denied.
+2026-06-06 00:20:58.911Z [Warning] [Controllers] No permission to read /dev/input/event0. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event0' is denied.
+2026-06-06 00:20:58.911Z [Info] [Controllers] Controller disconnected: event2 at /dev/input/event2
+2026-06-06 00:20:58.911Z [Info] [Controllers] Controller disconnected: event1 at /dev/input/event1
+2026-06-06 00:20:58.911Z [Warning] [Controllers] No permission to read /dev/input/event10. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event10' is denied.
+2026-06-06 00:20:58.911Z [Info] [Controllers] Controller disconnected: event0 at /dev/input/event0
+2026-06-06 00:20:58.911Z [Info] [Controllers] Controller disconnected: event10 at /dev/input/event10
+2026-06-06 00:20:58.912Z [Warning] [Controllers] No permission to read /dev/input/event3. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event3' is denied.
+2026-06-06 00:20:58.912Z [Info] [Controllers] Controller disconnected: event3 at /dev/input/event3
+2026-06-06 00:20:58.913Z [Warning] [Controllers] No permission to read /dev/input/event5. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event5' is denied.
+2026-06-06 00:20:58.913Z [Info] [Controllers] Controller disconnected: event5 at /dev/input/event5
+2026-06-06 00:20:58.913Z [Warning] [Controllers] No permission to read /dev/input/event7. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event7' is denied.
+2026-06-06 00:20:58.913Z [Info] [Controllers] Controller disconnected: event7 at /dev/input/event7
+2026-06-06 00:20:58.913Z [Warning] [Controllers] No permission to read /dev/input/event9. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event9' is denied.
+2026-06-06 00:20:58.913Z [Info] [Controllers] Controller disconnected: event9 at /dev/input/event9
+2026-06-06 00:20:58.912Z [Warning] [Controllers] No permission to read /dev/input/event4. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event4' is denied.
+2026-06-06 00:20:58.913Z [Warning] [Controllers] No permission to read /dev/input/event6. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event6' is denied.
+2026-06-06 00:20:58.916Z [Info] [Controllers] Controller disconnected: event4 at /dev/input/event4
+2026-06-06 00:20:58.913Z [Warning] [Controllers] No permission to read /dev/input/event8. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event8' is denied.
+2026-06-06 00:20:58.916Z [Info] [Controllers] Controller disconnected: event8 at /dev/input/event8
+2026-06-06 00:20:58.916Z [Info] [Controllers] Controller disconnected: event6 at /dev/input/event6
+2026-06-06 00:26:54.362Z [Info] [Controllers] Detected controller candidate: event11 (/dev/input/event11)
+2026-06-06 00:26:54.362Z [Info] [Controllers] Detected controller candidate: event12 (/dev/input/event12)
+2026-06-06 00:26:54.362Z [Info] [Controllers] Detected controller candidate: event13 (/dev/input/event13)
+2026-06-06 00:26:54.362Z [Info] [Controllers] Controller connected: event11 at /dev/input/event11 via evdev
+2026-06-06 00:26:54.363Z [Warning] [Controllers] No permission to read /dev/input/event13. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event13' is denied.
+2026-06-06 00:26:54.363Z [Info] [Controllers] Controller disconnected: event13 at /dev/input/event13
+2026-06-06 00:26:54.363Z [Warning] [Controllers] No permission to read /dev/input/event12. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event12' is denied.
+2026-06-06 00:26:54.363Z [Info] [Controllers] Controller disconnected: event12 at /dev/input/event12
+2026-06-06 00:26:54.547Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:26:54.551Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:26:54.765Z [Debug] [Controllers] Mapped axis code 16 value -1 to Left
+2026-06-06 00:26:54.765Z [Debug] [Controllers] Navigation event Left from event11 (/dev/input/event11)
+2026-06-06 00:26:55.141Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:26:55.141Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:26:55.517Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:26:55.518Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:26:55.737Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:26:55.737Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:26:55.929Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:26:55.929Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:26:56.189Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:26:56.189Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:26:56.389Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:26:56.389Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:26:56.853Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:26:56.853Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:26:57.657Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:26:57.657Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:26:58.013Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:26:58.013Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:26:58.409Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:26:58.409Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:26:58.617Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:26:58.618Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:26:59.053Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:26:59.053Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:26:59.065Z [Info] [Steam] Launching Steam Link session
+2026-06-06 00:26:59.086Z [Info] [Steam] Steam Link session started with PID 2047
+2026-06-06 00:27:05.120Z [Info] [Steam] Steam Link session ended with code 0
+2026-06-06 00:27:18.265Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:27:18.266Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:27:47.009Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:27:47.009Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:27:47.025Z [Info] [Steam] Launching Steam Link session
+2026-06-06 00:27:47.027Z [Info] [Steam] Steam Link session started with PID 2194
+2026-06-06 00:29:00.701Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:00.702Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:29:00.969Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:00.969Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:29:01.165Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:01.281Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:01.281Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:29:01.421Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:01.661Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:01.661Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:29:01.881Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:02.029Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:02.029Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:29:02.161Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:02.329Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:29:02.329Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:29:02.429Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:33:08.088Z [Info] [Program] SteamLinkSystem starting
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event0 (/dev/input/event0)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event1 (/dev/input/event1)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event10 (/dev/input/event10)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event2 (/dev/input/event2)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event3 (/dev/input/event3)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event4 (/dev/input/event4)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event5 (/dev/input/event5)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event6 (/dev/input/event6)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event7 (/dev/input/event7)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event8 (/dev/input/event8)
+2026-06-06 00:33:08.156Z [Info] [Controllers] Detected controller candidate: event9 (/dev/input/event9)
+2026-06-06 00:33:08.164Z [Info] [Controllers] Controller manager started with 11 active device reader(s)
+2026-06-06 00:33:08.164Z [Info] [Controllers] Controller service initialized
+2026-06-06 00:33:08.167Z [Warning] [Controllers] No permission to read /dev/input/event1. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event1' is denied.
+2026-06-06 00:33:08.167Z [Warning] [Controllers] No permission to read /dev/input/event2. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event2' is denied.
+2026-06-06 00:33:08.167Z [Info] [Controllers] Controller disconnected: event2 at /dev/input/event2
+2026-06-06 00:33:08.167Z [Info] [Controllers] Controller disconnected: event1 at /dev/input/event1
+2026-06-06 00:33:08.167Z [Warning] [Controllers] No permission to read /dev/input/event0. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event0' is denied.
+2026-06-06 00:33:08.167Z [Info] [Controllers] Controller disconnected: event0 at /dev/input/event0
+2026-06-06 00:33:08.168Z [Warning] [Controllers] No permission to read /dev/input/event10. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event10' is denied.
+2026-06-06 00:33:08.168Z [Info] [Controllers] Controller disconnected: event10 at /dev/input/event10
+2026-06-06 00:33:08.168Z [Warning] [Controllers] No permission to read /dev/input/event3. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event3' is denied.
+2026-06-06 00:33:08.168Z [Warning] [Controllers] No permission to read /dev/input/event4. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event4' is denied.
+2026-06-06 00:33:08.168Z [Info] [Controllers] Controller disconnected: event4 at /dev/input/event4
+2026-06-06 00:33:08.168Z [Warning] [Controllers] No permission to read /dev/input/event5. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event5' is denied.
+2026-06-06 00:33:08.168Z [Warning] [Controllers] No permission to read /dev/input/event6. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event6' is denied.
+2026-06-06 00:33:08.168Z [Info] [Controllers] Controller disconnected: event3 at /dev/input/event3
+2026-06-06 00:33:08.169Z [Warning] [Controllers] No permission to read /dev/input/event7. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event7' is denied.
+2026-06-06 00:33:08.169Z [Info] [Controllers] Controller disconnected: event7 at /dev/input/event7
+2026-06-06 00:33:08.169Z [Warning] [Controllers] No permission to read /dev/input/event9. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event9' is denied.
+2026-06-06 00:33:08.169Z [Info] [Controllers] Controller disconnected: event9 at /dev/input/event9
+2026-06-06 00:33:08.168Z [Info] [Controllers] Controller disconnected: event6 at /dev/input/event6
+2026-06-06 00:33:08.169Z [Warning] [Controllers] No permission to read /dev/input/event8. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event8' is denied.
+2026-06-06 00:33:08.168Z [Info] [Controllers] Controller disconnected: event5 at /dev/input/event5
+2026-06-06 00:33:08.169Z [Info] [Controllers] Controller disconnected: event8 at /dev/input/event8
+2026-06-06 00:33:48.168Z [Info] [Controllers] Detected controller candidate: event11 (/dev/input/event11)
+2026-06-06 00:33:48.168Z [Info] [Controllers] Detected controller candidate: event12 (/dev/input/event12)
+2026-06-06 00:33:48.168Z [Info] [Controllers] Detected controller candidate: event13 (/dev/input/event13)
+2026-06-06 00:33:48.168Z [Info] [Controllers] Controller connected: event11 at /dev/input/event11 via evdev
+2026-06-06 00:33:48.169Z [Warning] [Controllers] No permission to read /dev/input/event13. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event13' is denied.
+2026-06-06 00:33:48.169Z [Warning] [Controllers] No permission to read /dev/input/event12. Add the service user to input,audio,video,render groups. Access to the path '/dev/input/event12' is denied.
+2026-06-06 00:33:48.169Z [Info] [Controllers] Controller disconnected: event13 at /dev/input/event13
+2026-06-06 00:33:48.169Z [Info] [Controllers] Controller disconnected: event12 at /dev/input/event12
+2026-06-06 00:33:48.327Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:33:48.331Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:33:48.525Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:33:48.526Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:33:48.945Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:33:48.945Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:33:49.138Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:33:49.138Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:33:49.525Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:33:49.526Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:33:51.437Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:33:51.437Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:33:52.093Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:33:52.094Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:33:52.107Z [Info] [Steam] Launching Steam Link session
+2026-06-06 00:33:52.116Z [Info] [Steam] Steam Link session started with PID 1048
+2026-06-06 00:34:02.066Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:02.066Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:02.393Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:02.394Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:02.769Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:02.770Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:03.357Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:03.358Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:03.761Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:03.761Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:04.109Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:04.110Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:04.369Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:04.370Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:04.641Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:04.642Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:04.997Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:04.998Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:05.329Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:05.330Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:05.601Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:05.603Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:05.861Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:05.861Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:06.085Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:06.085Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:06.325Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:06.325Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:06.605Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:06.605Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:06.829Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:06.829Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:07.069Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:07.069Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:07.269Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:07.269Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:07.477Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:07.477Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:07.749Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:07.749Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:08.201Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:08.202Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:08.509Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:08.509Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:08.917Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:34:08.917Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:34:09.321Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:09.321Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:09.581Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:09.581Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:09.833Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:09.833Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:10.153Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:10.153Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:10.433Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:10.433Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:10.753Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:34:10.753Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:34:11.093Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:11.093Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:11.281Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:11.433Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:11.433Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:11.541Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:11.633Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:11.633Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:11.841Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:34:11.841Z [Debug] [Controllers] Navigation event Select from event11 (/dev/input/event11)
+2026-06-06 00:34:12.053Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:12.053Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:12.054Z [Debug] [Controllers] Mapped button code 304 (Pressed) to Select
+2026-06-06 00:34:12.281Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:12.282Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:12.485Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:12.485Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:12.633Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:12.633Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:12.789Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:12.857Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:34:12.857Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:34:13.437Z [Debug] [Controllers] Mapped axis code 17 value -1 to Up
+2026-06-06 00:34:13.437Z [Debug] [Controllers] Navigation event Up from event11 (/dev/input/event11)
+2026-06-06 00:34:13.617Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:13.617Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:13.777Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:13.925Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:13.925Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:14.065Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:14.185Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:14.185Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:14.337Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:14.458Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:14.458Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:14.458Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:14.458Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:14.605Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:14.657Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:14.657Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:14.757Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:14.757Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:14.841Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:14.841Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:14.885Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:15.037Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:15.037Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:15.177Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:15.177Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:15.237Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:15.237Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:15.345Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:15.425Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:15.425Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:15.505Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:15.505Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:15.625Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:15.625Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:15.657Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:15.813Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:15.813Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:15.857Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:15.858Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:15.985Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:16.117Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:16.118Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:16.137Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:16.137Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:16.265Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:16.365Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:16.365Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:16.445Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:16.445Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:16.577Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:16.577Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:16.585Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:16.737Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:16.737Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:34:16.777Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:16.777Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:34:16.885Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:34:16.965Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:34:16.965Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:35:08.625Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:35:08.626Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:35:08.881Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:35:08.881Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:35:08.965Z [Debug] [Controllers] Mapped axis code 17 value 1 to Down
+2026-06-06 00:35:08.966Z [Debug] [Controllers] Navigation event Down from event11 (/dev/input/event11)
+2026-06-06 00:35:09.025Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:35:09.161Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:35:09.161Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:35:09.405Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:35:09.557Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:35:09.557Z [Debug] [Controllers] Navigation event Back from event11 (/dev/input/event11)
+2026-06-06 00:35:09.685Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:35:09.777Z [Debug] [Controllers] Mapped button code 305 (Pressed) to Back
+2026-06-06 00:39:26.369Z [Warning] [Controllers] Controller disconnected or input read failed for /dev/input/event11: No such device : '/dev/input/event11'
+2026-06-06 00:39:26.370Z [Info] [Controllers] Controller disconnected: event11 at /dev/input/event11
