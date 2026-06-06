@@ -14,12 +14,16 @@ public sealed class ControllerService : IDisposable
         get
         {
             var states = _manager.States;
-            var deviceLines = states.Count == 0
-                ? "No controller event devices are currently readable. Ensure the service user belongs to input,audio,video,render and that controllers expose /dev/input/event* nodes."
-                : string.Join(Environment.NewLine, states.Select(state => $"- {state.DeviceName} ({state.DevicePath}) [{state.Backend}] connected={state.Connected} lastInput={state.LastInputUtc:u}"));
+            var sdlLines = _manager.SdlControllerSummaries;
+            var evdevLines = states.Select(state => $"- {state.DeviceName} ({state.DevicePath}) [{state.Backend}] connected={state.Connected} lastInput={state.LastInputUtc:u}");
+            var allDeviceLines = sdlLines.Concat(evdevLines).ToArray();
+            var deviceLines = allDeviceLines.Length == 0
+                ? "No controller devices are currently readable. Ensure SDL2 is installed or the service user belongs to input,audio,video,render for evdev fallback."
+                : string.Join(Environment.NewLine, allDeviceLines);
 
-            return "Controller navigation subsystem: Linux evdev backend active; SDL2 backend can be added behind ControllerManager later." + Environment.NewLine +
+            return "Controller navigation subsystem: SDL2 GameController primary backend with Linux evdev fallback." + Environment.NewLine +
                    $"Detected/readable devices: {_manager.ConnectedDeviceCount}" + Environment.NewLine +
+                   $"SDL2 available: {_manager.IsSdlAvailable}" + Environment.NewLine +
                    "Supported defaults: D-pad/left stick navigate, A/Cross selects, B/Circle backs out, Start opens Home." + Environment.NewLine +
                    "Linux access: sudo usermod -aG input,audio,video,render steamlinkclient" + Environment.NewLine +
                    deviceLines;

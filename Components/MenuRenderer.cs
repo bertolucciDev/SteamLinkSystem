@@ -47,7 +47,7 @@ public sealed class MenuRenderer
                     var backIndex = FindBackChoice(items);
                     if (backIndex >= 0)
                         return items[backIndex];
-                    return items[focus.SelectedIndex];
+                    break;
                 case NavigationAction.Home:
                     var homeIndex = FindHomeChoice(items);
                     if (homeIndex >= 0)
@@ -130,7 +130,7 @@ public sealed class MenuRenderer
     {
         for (var index = 0; index < items.Count; index++)
         {
-            if (items[index].Label.Contains("Back", StringComparison.OrdinalIgnoreCase) || items[index].Label.Contains("Exit", StringComparison.OrdinalIgnoreCase))
+            if (items[index].Label.Contains("Back", StringComparison.OrdinalIgnoreCase))
                 return index;
         }
 

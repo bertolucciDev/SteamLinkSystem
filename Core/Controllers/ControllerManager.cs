@@ -13,12 +13,18 @@ public sealed class ControllerManager : IDisposable
         SingleWriter = false
     });
     private readonly CancellationTokenSource _cancellation = new();
+    private readonly SdlControllerManager _sdlControllerManager;
     private readonly Dictionary<string, LinuxInputReader> _readers = new(StringComparer.Ordinal);
     private readonly List<Task> _readerTasks = new();
     private readonly Dictionary<NavigationAction, DateTime> _lastActionUtc = new();
     private readonly object _sync = new();
     private Task? _hotplugTask;
     private bool _started;
+
+    public ControllerManager()
+    {
+        _sdlControllerManager = new SdlControllerManager(EmitNavigation);
+    }
 
     public event Action<NavigationAction>? NavigationReceived;
 
@@ -31,7 +37,9 @@ public sealed class ControllerManager : IDisposable
         }
     }
 
-    public int ConnectedDeviceCount => States.Count(state => state.Connected);
+    public int ConnectedDeviceCount => States.Count(state => state.Connected) + _sdlControllerManager.ConnectedControllerCount;
+    public bool IsSdlAvailable => _sdlControllerManager.IsAvailable;
+    public IReadOnlyList<string> SdlControllerSummaries => _sdlControllerManager.ControllerSummaries;
     public ChannelReader<NavigationAction> NavigationEvents => _navigationEvents.Reader;
 
     public void Start()
@@ -40,6 +48,7 @@ public sealed class ControllerManager : IDisposable
             return;
 
         _started = true;
+        _sdlControllerManager.Initialize();
         ScanForControllers();
         _hotplugTask = Task.Run(() => HotplugLoopAsync(_cancellation.Token));
         Logger.Info($"Controller manager started with {ConnectedDeviceCount} active device reader(s)", "Controllers");
@@ -193,6 +202,7 @@ public sealed class ControllerManager : IDisposable
                 reader.DisposeAsync().AsTask().GetAwaiter().GetResult();
             _readers.Clear();
         }
+        _sdlControllerManager.Dispose();
         _navigationEvents.Writer.TryComplete();
         _cancellation.Dispose();
     }
