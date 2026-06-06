@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SteamLinkSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+719e886b81fdc19b24442c4e429360dd2cf4c465")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1874aeb66f9d1bc43df724a176825a5f588c675")]
 [assembly: System.Reflection.AssemblyProductAttribute("SteamLinkSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SteamLinkSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
